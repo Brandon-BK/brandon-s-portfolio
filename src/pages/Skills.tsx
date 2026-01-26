@@ -12,42 +12,70 @@ interface SkillCategory {
 
 const skillCategories: SkillCategory[] = [
   {
-    title: "Programming",
+    title: "Programming Languages",
     skills: [
-      { name: "JavaScript / TypeScript", level: 90, status: "proficient" },
-      { name: "Python", level: 75, status: "proficient" },
-      { name: "SQL", level: 80, status: "proficient" },
-      { name: "Go", level: 45, status: "learning" },
+      { name: "JavaScript", level: 90, status: "proficient" },
+      { name: "Python", level: 80, status: "proficient" },
+      { name: "SQL", level: 85, status: "proficient" },
+      { name: "Go", level: 35, status: "exploring" },
     ],
   },
   {
-    title: "Cloud & DevOps",
+    title: "Frontend & Cross-Platform",
     skills: [
-      { name: "AWS (S3, Lambda, EC2, IAM)", level: 85, status: "proficient" },
-      { name: "Docker", level: 80, status: "proficient" },
-      { name: "CI/CD (GitHub Actions)", level: 75, status: "proficient" },
-      { name: "Terraform", level: 60, status: "learning" },
-      { name: "CloudWatch", level: 70, status: "proficient" },
+      { name: "React.js", level: 90, status: "proficient" },
+      { name: "Next.js", level: 85, status: "proficient" },
+      { name: "HTML5 & CSS", level: 90, status: "proficient" },
+      { name: "Responsive Web Design", level: 85, status: "proficient" },
     ],
   },
   {
-    title: "Data Engineering",
+    title: "Backend & APIs",
     skills: [
-      { name: "ETL / ELT Concepts", level: 70, status: "proficient" },
+      { name: "Node.js", level: 80, status: "proficient" },
+      { name: "REST APIs", level: 85, status: "proficient" },
+      { name: "Python Data Pipelines", level: 75, status: "proficient" },
+    ],
+  },
+  {
+    title: "Databases & Data Stores",
+    skills: [
+      { name: "SQL / Relational DBs", level: 85, status: "proficient" },
+      { name: "MongoDB", level: 75, status: "proficient" },
+      { name: "Firebase", level: 70, status: "proficient" },
+      { name: "AWS DynamoDB", level: 65, status: "learning" },
+    ],
+  },
+  {
+    title: "Cloud & Containers (AWS)",
+    skills: [
+      { name: "EC2, Lambda, S3", level: 85, status: "proficient" },
+      { name: "IAM, KMS", level: 80, status: "proficient" },
+      { name: "CloudWatch, Step Functions", level: 75, status: "proficient" },
+      { name: "ECS, Docker, Batch Jobs", level: 80, status: "proficient" },
+      { name: "Athena, SWF", level: 65, status: "learning" },
+      { name: "Amazon Bedrock", level: 50, status: "exploring" },
+      { name: "CodeCommit", level: 70, status: "proficient" },
+    ],
+  },
+  {
+    title: "Data & AI",
+    skills: [
       { name: "Data Modeling", level: 65, status: "learning" },
-      { name: "Data Lakes & Warehouses", level: 55, status: "learning" },
-      { name: "Apache Spark", level: 40, status: "exploring" },
-      { name: "Streaming (Kafka basics)", level: 35, status: "exploring" },
+      { name: "ETL / ELT Pipelines", level: 70, status: "learning" },
+      { name: "Automated Reporting", level: 80, status: "proficient" },
+      { name: "Analytics & Visualization", level: 65, status: "learning" },
+      { name: "Feature Engineering", level: 50, status: "exploring" },
+      { name: "ML Fundamentals", level: 45, status: "exploring" },
     ],
   },
   {
-    title: "AI / ML",
+    title: "Design & Collaboration",
     skills: [
-      { name: "Pandas & NumPy", level: 70, status: "proficient" },
-      { name: "scikit-learn", level: 55, status: "learning" },
-      { name: "Feature Engineering", level: 50, status: "learning" },
-      { name: "Model Evaluation", level: 45, status: "learning" },
-      { name: "MLOps Basics", level: 30, status: "exploring" },
+      { name: "Figma", level: 75, status: "proficient" },
+      { name: "UI/UX Design Principles", level: 70, status: "proficient" },
+      { name: "Problem-Solving", level: 90, status: "proficient" },
+      { name: "Teamwork", level: 90, status: "proficient" },
     ],
   },
 ];
@@ -77,10 +105,10 @@ const Skills = () => {
             className="max-w-3xl mb-16"
           >
             <h1 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-6">
-              Skills & Tech Stack
+              Skills & Technologies
             </h1>
             <p className="text-xl text-muted-foreground leading-relaxed">
-              A transparent view of my technical capabilities — from strong foundations to areas I'm actively developing.
+              A transparent view of my technical capabilities — from strong foundations to areas I'm actively developing. I believe in honest self-assessment and continuous growth.
             </p>
           </motion.div>
 
