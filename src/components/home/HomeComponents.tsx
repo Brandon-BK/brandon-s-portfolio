@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { ArrowRight, Download, Database, Cloud, Brain } from "lucide-react";
+import { ArrowRight, Download, Code, Cloud, Database, Brain, Server, Palette } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export function HeroSection() {
@@ -76,7 +76,7 @@ export function HeroSection() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-lg md:text-xl text-primary-foreground/70 mb-10 max-w-2xl mx-auto"
           >
-            Cross-platform Developer • Cloud & DevOps • Aspiring AI Data Engineer
+            Cross-Platform Software Engineer • Cloud & DevOps • Data & AI (In Progress)
           </motion.p>
 
           {/* CTAs */}
@@ -115,9 +115,11 @@ export function HeroSection() {
             <div className="font-mono text-sm text-primary-foreground/80">
               <span className="text-accent">$</span> brandon.current_focus
               <br />
-              <span className="text-accent/70">→</span> ["data_engineering", "cloud_architecture", "ml_systems"]
+              <span className="text-accent/70">→</span> ["cross_platform", "cloud_devops", "data_engineering", "ai_pipelines"]
               <br />
-              <span className="text-accent">$</span> brandon.build_pipeline()
+              <span className="text-accent">$</span> brandon.core_principle
+              <br />
+              <span className="text-accent/70">→</span> "Always follow the flow of data"
               <span className="cursor-blink">▋</span>
             </div>
           </motion.div>
@@ -130,19 +132,34 @@ export function HeroSection() {
 export function WhatIDoSection() {
   const services = [
     {
+      icon: Code,
+      title: "Cross-Platform Development",
+      description: "Build responsive web and mobile-friendly applications with React.js and Next.js. Apply UI/UX design principles for exceptional user experiences.",
+    },
+    {
+      icon: Server,
+      title: "Backend & APIs",
+      description: "Design and consume RESTful APIs. Build backend services with Node.js and Python. Integrate databases and manage business logic.",
+    },
+    {
       icon: Database,
-      title: "Software Engineering",
-      description: "Web & cross-platform apps, clean APIs, and scalable architecture that forms the foundation for data-intensive systems.",
+      title: "Databases & Data Management",
+      description: "SQL for relational data modeling, MongoDB for document-based apps, Firebase for realtime applications, AWS databases for cloud-native storage.",
     },
     {
       icon: Cloud,
-      title: "Cloud & DevOps",
-      description: "AWS infrastructure, CI/CD pipelines, observability & security — building reliable foundations for data workflows.",
+      title: "Cloud & Containerized Systems",
+      description: "Deploy using AWS ECS containers, build Docker images, manage serverless architectures, and schedule workflows for reliability.",
     },
     {
       icon: Brain,
-      title: "Data & AI Engineering",
-      description: "Data pipelines, analytics foundations, and machine learning readiness — bridging software and intelligence.",
+      title: "Data & AI Foundations",
+      description: "Build data pipelines, ETL processes for analytics, prepare datasets for AI/ML workflows, and automate business reporting.",
+    },
+    {
+      icon: Palette,
+      title: "Design & Collaboration",
+      description: "UI/UX design and wireframing with Figma. Problem-solving, time management, teamwork, and attention to detail.",
     },
   ];
 
@@ -160,11 +177,11 @@ export function WhatIDoSection() {
             What I Do
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Combining engineering excellence with data-driven thinking
+            Adaptable, system-focused, growth-oriented — moving fluidly between frontend, backend, cloud, and data workflows
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
             <motion.div
               key={service.title}
@@ -194,22 +211,22 @@ export function WhatIDoSection() {
 export function FeaturedProjectsSection() {
   const projects = [
     {
-      title: "Cloud Data Pipeline",
-      description: "Event-driven data ingestion with S3, Lambda transforms, and real-time analytics.",
-      tags: ["AWS", "Python", "Lambda", "S3"],
-      href: "/projects#cloud-pipeline",
+      title: "Data Automation & Reporting",
+      description: "ECS batch jobs and Docker images generating daily, weekly, and monthly sales reports. Reduced manual reporting time by 80%.",
+      tags: ["Python", "SQL", "Docker", "AWS ECS", "S3"],
+      href: "/projects#data-automation",
     },
     {
-      title: "AI-Ready Dataset Builder",
-      description: "Automated data cleaning, feature engineering, and model-ready output generation.",
-      tags: ["Python", "Pandas", "SQL", "Docker"],
-      href: "/projects#dataset-builder",
+      title: "Cloud & Containerized Systems",
+      description: "Scalable, automated, event-driven architectures with AWS ECS, Docker deployments, and CloudWatch monitoring.",
+      tags: ["AWS", "Docker", "ECS", "CloudWatch"],
+      href: "/projects#cloud-systems",
     },
     {
-      title: "Observability Platform",
-      description: "Comprehensive logging, metrics collection, and alerting system for distributed services.",
-      tags: ["CloudWatch", "Grafana", "Terraform"],
-      href: "/projects#observability",
+      title: "Cross-Platform Applications",
+      description: "Full-stack systems with React.js, Next.js, API integrations, responsive design, and database integrations.",
+      tags: ["React.js", "Next.js", "Node.js", "MongoDB"],
+      href: "/projects#cross-platform",
     },
   ];
 

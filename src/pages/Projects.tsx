@@ -1,15 +1,17 @@
 import { motion } from "framer-motion";
-import { ExternalLink, Github, ArrowRight } from "lucide-react";
+import { ExternalLink, Github, ArrowRight, TrendingUp } from "lucide-react";
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 
 interface Project {
   id: string;
   title: string;
+  category: string;
   problem: string;
   solution: string;
   tags: string[];
   learnings: string[];
+  impact?: string[];
   github?: string;
   demo?: string;
   featured?: boolean;
@@ -17,59 +19,77 @@ interface Project {
 
 const projects: Project[] = [
   {
-    id: "cloud-pipeline",
-    title: "Cloud Data Pipeline",
-    problem: "Organizations struggle to ingest and transform data at scale with reliable event-driven processing.",
-    solution: "Built an AWS-native data pipeline using S3 for storage, Lambda for serverless transforms, and EventBridge for orchestration. Implemented error handling with DLQs and monitoring with CloudWatch.",
-    tags: ["AWS", "Python", "Lambda", "S3", "EventBridge", "CloudWatch"],
+    id: "data-automation",
+    title: "Data Automation & Reporting",
+    category: "Data Engineering",
+    problem: "Manual reporting processes consumed significant time and were prone to errors, delaying critical business insights.",
+    solution: "Developed batch jobs using ECS containers and Docker images. Created Python scripts and SQL code to generate daily, weekly, and monthly sales reports for companies like Sakso and The Beverage Company. Extracted logs, processed data for specific date ranges, and automated uploads/downloads.",
+    tags: ["Python", "SQL", "Docker", "AWS ECS", "Batch Jobs", "S3", "CloudWatch"],
+    learnings: [
+      "Container orchestration with ECS",
+      "Reliable job scheduling patterns",
+      "Error handling in data pipelines",
+    ],
+    impact: [
+      "Reduced manual reporting time by 80%",
+      "Delivered timely and accurate cost and sales insights",
+      "Improved auditability and reliability of internal data processes",
+    ],
+    featured: true,
+  },
+  {
+    id: "cloud-systems",
+    title: "Cloud & Containerized Systems",
+    category: "Cloud & DevOps",
+    problem: "Need for scalable, automated, and event-driven architectures that can handle varying workloads reliably.",
+    solution: "Built scalable infrastructure using AWS ECS containers, Docker image deployments, batch job scheduling, serverless workflows, and comprehensive CloudWatch monitoring.",
+    tags: ["AWS ECS", "Docker", "Lambda", "Step Functions", "CloudWatch", "S3"],
     learnings: [
       "Event-driven architecture patterns",
-      "Cost optimization at scale",
-      "Monitoring distributed systems",
+      "Serverless best practices",
+      "Infrastructure monitoring and alerting",
     ],
-    github: "https://github.com/brandon/cloud-pipeline",
     featured: true,
   },
   {
-    id: "dataset-builder",
-    title: "AI-Ready Dataset Builder",
-    problem: "Raw data requires extensive cleaning and transformation before it can be used for machine learning.",
-    solution: "Created an automated pipeline that ingests raw data, performs cleaning, feature engineering, and outputs model-ready datasets with versioning and validation.",
-    tags: ["Python", "Pandas", "SQL", "Docker", "Great Expectations"],
+    id: "cross-platform",
+    title: "Cross-Platform Applications",
+    category: "Full-Stack Development",
+    problem: "Organizations need complete systems that work seamlessly across frontend, backend, and cloud infrastructure.",
+    solution: "Delivered full-stack projects using React.js and Next.js for frontend, Node.js and Python for backend, with API integrations, responsive design, and database integrations using MongoDB, Firebase, and AWS databases.",
+    tags: ["React.js", "Next.js", "Node.js", "MongoDB", "Firebase", "REST APIs"],
     learnings: [
-      "Feature engineering best practices",
-      "Data validation strategies",
-      "Reproducible data workflows",
+      "Component architecture patterns",
+      "API design and integration",
+      "Responsive design principles",
     ],
-    github: "https://github.com/brandon/dataset-builder",
     featured: true,
   },
   {
-    id: "observability",
-    title: "Observability Platform",
-    problem: "Distributed systems lack unified visibility into logs, metrics, and traces for effective debugging.",
-    solution: "Deployed a comprehensive observability stack with centralized logging, custom metrics dashboards, and intelligent alerting based on anomaly detection.",
-    tags: ["CloudWatch", "Grafana", "Terraform", "Python"],
+    id: "data-engineering",
+    title: "Data Engineering Projects",
+    category: "Data Engineering (In Progress)",
+    problem: "Building stronger foundations in data engineering to prepare for AI-ready systems.",
+    solution: "Working on SQL analytics, Athena queries, ETL pipelines, and data preparation workflows to strengthen data engineering skills.",
+    tags: ["SQL", "Athena", "ETL", "Python", "Data Modeling"],
     learnings: [
-      "SLO/SLI definition",
-      "Alert fatigue reduction",
-      "Infrastructure as code",
+      "SQL analytics and optimization",
+      "Data lake architectures",
+      "ETL pipeline design",
     ],
-    github: "https://github.com/brandon/observability-platform",
-    featured: true,
   },
   {
-    id: "ml-classifier",
-    title: "ML Classification Project",
-    problem: "Needed hands-on experience building an end-to-end machine learning pipeline.",
-    solution: "Built a classification model from data collection through deployment, including feature selection, hyperparameter tuning, and model evaluation.",
-    tags: ["Python", "scikit-learn", "FastAPI", "Docker"],
+    id: "ai-pipelines",
+    title: "AI-Ready Pipelines",
+    category: "AI/ML (Exploratory)",
+    problem: "Preparing data and infrastructure for machine learning and AI workflows.",
+    solution: "Exploring feature engineering, dataset validation, and Amazon Bedrock experimentation to build AI-ready data pipelines.",
+    tags: ["Python", "Amazon Bedrock", "Feature Engineering", "Data Validation"],
     learnings: [
-      "Model evaluation metrics",
-      "Cross-validation techniques",
-      "Model serving basics",
+      "Feature engineering concepts",
+      "Dataset quality validation",
+      "AI service integration",
     ],
-    github: "https://github.com/brandon/ml-classifier",
   },
 ];
 
@@ -92,7 +112,7 @@ const Projects = () => {
               Projects
             </h1>
             <p className="text-xl text-muted-foreground leading-relaxed">
-              Real-world projects demonstrating my journey from software engineering to data and AI systems.
+              Real-world projects demonstrating my journey across cross-platform development, cloud systems, and data engineering.
             </p>
           </motion.div>
 
@@ -111,7 +131,10 @@ const Projects = () => {
                 <div className="grid lg:grid-cols-3 gap-8">
                   {/* Main Content */}
                   <div className="lg:col-span-2">
-                    <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-4">
+                    <span className="text-xs font-medium text-accent uppercase tracking-wider">
+                      {project.category}
+                    </span>
+                    <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-4 mt-2">
                       {project.title}
                     </h2>
                     
@@ -162,19 +185,38 @@ const Projects = () => {
                     </div>
                   </div>
 
-                  {/* Learnings */}
-                  <div className="bg-muted rounded-xl p-6">
-                    <h3 className="font-display text-lg font-semibold text-foreground mb-4">
-                      Key Learnings
-                    </h3>
-                    <ul className="space-y-3">
-                      {project.learnings.map((learning, i) => (
-                        <li key={i} className="flex items-start gap-3">
-                          <ArrowRight className="w-4 h-4 text-accent mt-1 flex-shrink-0" />
-                          <span className="text-muted-foreground text-sm">{learning}</span>
-                        </li>
-                      ))}
-                    </ul>
+                  {/* Learnings & Impact */}
+                  <div className="space-y-6">
+                    <div className="bg-muted rounded-xl p-6">
+                      <h3 className="font-display text-lg font-semibold text-foreground mb-4">
+                        Key Learnings
+                      </h3>
+                      <ul className="space-y-3">
+                        {project.learnings.map((learning, i) => (
+                          <li key={i} className="flex items-start gap-3">
+                            <ArrowRight className="w-4 h-4 text-accent mt-1 flex-shrink-0" />
+                            <span className="text-muted-foreground text-sm">{learning}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    {project.impact && (
+                      <div className="bg-accent/10 rounded-xl p-6 border border-accent/20">
+                        <h3 className="font-display text-lg font-semibold text-foreground mb-4 flex items-center gap-2">
+                          <TrendingUp className="w-5 h-5 text-accent" />
+                          Impact
+                        </h3>
+                        <ul className="space-y-3">
+                          {project.impact.map((item, i) => (
+                            <li key={i} className="flex items-start gap-3">
+                              <span className="text-accent font-bold">•</span>
+                              <span className="text-foreground text-sm font-medium">{item}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
                   </div>
                 </div>
               </motion.div>
@@ -191,7 +233,7 @@ const Projects = () => {
                 transition={{ duration: 0.5 }}
                 className="font-display text-2xl font-bold text-foreground mb-8"
               >
-                More Projects
+                In Progress & Exploratory
               </motion.h2>
               
               <div className="grid md:grid-cols-2 gap-6">
@@ -205,7 +247,10 @@ const Projects = () => {
                     transition={{ duration: 0.5, delay: index * 0.1 }}
                     className="card-elevated p-6 rounded-2xl border border-border"
                   >
-                    <h3 className="font-display text-xl font-semibold text-foreground mb-3">
+                    <span className="text-xs font-medium text-accent uppercase tracking-wider">
+                      {project.category}
+                    </span>
+                    <h3 className="font-display text-xl font-semibold text-foreground mb-3 mt-2">
                       {project.title}
                     </h3>
                     <p className="text-muted-foreground text-sm mb-4 leading-relaxed">

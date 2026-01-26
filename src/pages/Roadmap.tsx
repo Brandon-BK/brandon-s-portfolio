@@ -19,54 +19,45 @@ interface Phase {
 const roadmapPhases: Phase[] = [
   {
     number: 1,
-    title: "Foundations",
+    title: "Software & Cloud",
     status: "completed",
-    description: "Building the core technical skills that underpin everything else.",
+    description: "Cross-platform apps, backend services, AWS fundamentals, and containerized systems.",
     items: [
-      { name: "Cloud infrastructure (AWS)", completed: true, link: "/projects#observability" },
+      { name: "Cross-platform web applications (React.js, Next.js)", completed: true },
+      { name: "Backend services (Node.js, Python)", completed: true },
       { name: "RESTful API design", completed: true },
-      { name: "Relational databases", completed: true },
-      { name: "Version control & CI/CD", completed: true },
-      { name: "Containerization (Docker)", completed: true },
+      { name: "AWS fundamentals (EC2, Lambda, S3, IAM)", completed: true },
+      { name: "Containerized systems (Docker, ECS)", completed: true },
+      { name: "CI/CD & version control", completed: true },
     ],
   },
   {
     number: 2,
     title: "Data Engineering",
     status: "current",
-    description: "Learning to build robust data pipelines and manage data at scale.",
+    description: "Data pipelines, automated reporting, analytics, database integrations, and data modeling.",
     items: [
-      { name: "ETL/ELT pipelines", completed: true, link: "/projects#cloud-pipeline" },
-      { name: "Data lake architecture", completed: true },
-      { name: "Data warehousing", completed: false },
-      { name: "Stream processing", completed: false },
-      { name: "Data quality & governance", completed: false },
+      { name: "Data pipelines with Python & SQL", completed: true, link: "/projects#data-automation" },
+      { name: "Automated reporting systems", completed: true, link: "/projects#data-automation" },
+      { name: "ETL/ELT processes", completed: true },
+      { name: "Database integrations (SQL, MongoDB, Firebase)", completed: true },
+      { name: "Analytics & visualization", completed: false },
+      { name: "Data modeling best practices", completed: false },
+      { name: "Stream processing basics", completed: false },
     ],
   },
   {
     number: 3,
-    title: "ML Systems",
+    title: "AI Systems",
     status: "upcoming",
-    description: "Building the infrastructure that powers machine learning at scale.",
+    description: "ML pipelines, AI-ready data, model serving, and observability.",
     items: [
-      { name: "Feature stores", completed: false },
-      { name: "Model training pipelines", completed: false },
+      { name: "Feature engineering", completed: false },
+      { name: "ML pipeline architecture", completed: false },
+      { name: "AI-ready data preparation", completed: false },
+      { name: "Model training workflows", completed: false },
       { name: "Model serving & inference", completed: false },
-      { name: "ML monitoring", completed: false },
-      { name: "Experiment tracking", completed: false },
-    ],
-  },
-  {
-    number: 4,
-    title: "Production AI",
-    status: "upcoming",
-    description: "Deploying and maintaining AI systems in production environments.",
-    items: [
-      { name: "MLOps practices", completed: false },
-      { name: "Scalability patterns", completed: false },
-      { name: "AI governance", completed: false },
-      { name: "Cost optimization", completed: false },
-      { name: "A/B testing frameworks", completed: false },
+      { name: "ML observability", completed: false },
     ],
   },
 ];
@@ -88,9 +79,9 @@ const Roadmap = () => {
       case "completed":
         return { text: "Completed", color: "text-accent" };
       case "current":
-        return { text: "In Progress", color: "text-accent" };
+        return { text: "Current Focus", color: "text-accent" };
       case "upcoming":
-        return { text: "Upcoming", color: "text-muted-foreground" };
+        return { text: "Next", color: "text-muted-foreground" };
     }
   };
 
@@ -106,10 +97,10 @@ const Roadmap = () => {
             className="max-w-3xl mb-16"
           >
             <h1 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-6">
-              AI Data Engineer Roadmap
+              Data & AI Journey
             </h1>
             <p className="text-xl text-muted-foreground leading-relaxed">
-              A transparent view of my learning journey — from foundations to production AI systems. This isn't just a list of skills; it's a commitment to continuous growth.
+              I'm intentionally transitioning toward data and AI engineering through structured learning and hands-on projects. This roadmap shows my progression from software engineering foundations to AI systems.
             </p>
           </motion.div>
 

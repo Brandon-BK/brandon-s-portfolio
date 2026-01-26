@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Target, Lightbulb, Rocket } from "lucide-react";
+import { ArrowRight, Target, Lightbulb, Rocket, Code, TrendingUp } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
@@ -7,26 +7,31 @@ import { Button } from "@/components/ui/button";
 const About = () => {
   const highlights = [
     {
-      icon: Lightbulb,
-      title: "Engineering-First Mindset",
-      description: "Every solution starts with understanding the problem deeply, then building with precision and scalability in mind.",
+      icon: Code,
+      title: "Cross-Platform Expertise",
+      description: "Moving fluidly between frontend, backend, cloud infrastructure, and data workflows depending on the team's needs.",
     },
     {
       icon: Target,
-      title: "Strong Cloud Background",
-      description: "Deep experience with AWS services, infrastructure as code, and building reliable distributed systems.",
+      title: "Data Flow Focus",
+      description: "Always following the flow of data — designing systems that are reliable, automated, and AI-ready.",
     },
     {
-      icon: Rocket,
-      title: "Intentional Transition",
-      description: "Deliberately building expertise in data engineering and AI systems to shape the future of intelligent applications.",
+      icon: Lightbulb,
+      title: "Clean Code Practices",
+      description: "Recognized for clean code practices, team collaboration, and a growth-oriented mindset.",
+    },
+    {
+      icon: TrendingUp,
+      title: "Continuous Growth",
+      description: "Deliberately expanding into data engineering and AI-ready pipelines to build intelligent systems.",
     },
   ];
 
   const careerPath = [
-    { stage: "Current", role: "Cross-platform Developer", status: "active" },
-    { stage: "Next", role: "Data Engineer", status: "upcoming" },
-    { stage: "Target", role: "AI / ML Platform Engineer", status: "goal" },
+    { stage: "Current", role: "Cross-Platform Software Engineer", status: "active" },
+    { stage: "Growing Into", role: "Data & AI Engineering", status: "upcoming" },
+    { stage: "Core Principle", role: "Always Follow the Flow of Data", status: "goal" },
   ];
 
   return (
@@ -44,16 +49,19 @@ const About = () => {
               About Me
             </h1>
             <p className="text-xl text-muted-foreground leading-relaxed mb-8">
-              I'm a developer with a strong foundation in cloud-native systems and a growing focus on data engineering and AI. My goal is to design pipelines and platforms that turn raw data into intelligent systems.
+              I'm a results-driven cross-platform software engineer who builds fast, scalable, and user-focused web applications while working across frontend, backend, cloud, and databases.
+            </p>
+            <p className="text-lg text-muted-foreground leading-relaxed mb-8">
+              I specialize in React.js, Next.js, JavaScript, HTML5, and CSS, and I'm proficient in Python and SQL. I always follow the flow of data, designing systems that are reliable, automated, and AI-ready.
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              With years of experience building scalable applications and infrastructure, I'm now channeling that expertise toward the exciting intersection of data and machine learning — where engineering meets intelligence.
+              This portfolio reflects how I work: <span className="text-foreground font-medium">adaptable, system-focused, growth-oriented, and always learning.</span>
             </p>
           </motion.div>
         </div>
       </section>
 
-      {/* What Sets Me Apart */}
+      {/* What I Do Day-to-Day */}
       <section className="section-padding bg-muted">
         <div className="container-narrow">
           <motion.div
@@ -61,14 +69,17 @@ const About = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-16"
+            className="max-w-3xl mb-12"
           >
             <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
-              What Sets Me Apart
+              How I Work
             </h2>
+            <p className="text-muted-foreground text-lg leading-relaxed">
+              I work primarily as a cross-platform engineer, moving fluidly between frontend, backend, cloud infrastructure, and data workflows depending on the team's needs. Some days I design UI/UX and wireframes, other days I build backend services, automate data pipelines, or manage cloud systems.
+            </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 gap-8">
             {highlights.map((item, index) => (
               <motion.div
                 key={item.title}
@@ -93,8 +104,28 @@ const About = () => {
         </div>
       </section>
 
-      {/* Career Direction */}
+      {/* Experience Summary */}
       <section className="section-padding bg-background">
+        <div className="container-narrow">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="max-w-3xl mb-12"
+          >
+            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
+              Experience & Background
+            </h2>
+            <p className="text-muted-foreground text-lg leading-relaxed">
+              I have experience in frontend technologies, Python, SQL, AWS cloud platforms, and containerized systems, and I'm currently expanding into data engineering and AI-ready pipelines. My goal is to build platforms that turn raw data into intelligent, production-ready systems.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Career Direction */}
+      <section className="section-padding bg-muted">
         <div className="container-narrow">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -107,7 +138,7 @@ const About = () => {
               Career Direction
             </h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              A deliberate journey from software engineering to AI systems
+              An intentional journey from software engineering to AI systems
             </p>
           </motion.div>
 
@@ -122,7 +153,7 @@ const About = () => {
                 className="flex items-center gap-4 md:gap-8"
               >
                 <div
-                  className={`text-center p-6 rounded-2xl border-2 ${
+                  className={`text-center p-6 rounded-2xl border-2 min-w-[200px] ${
                     step.status === "active"
                       ? "border-accent bg-accent/10"
                       : step.status === "upcoming"
@@ -153,7 +184,7 @@ const About = () => {
           >
             <Button variant="hero" size="lg" asChild>
               <Link to="/roadmap">
-                View My Full Roadmap
+                View My Full Journey
                 <ArrowRight className="w-5 h-5" />
               </Link>
             </Button>

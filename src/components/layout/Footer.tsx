@@ -2,8 +2,8 @@ import { Link } from "react-router-dom";
 import { Github, Linkedin, Mail } from "lucide-react";
 
 const socialLinks = [
-  { href: "https://github.com/brandon", icon: Github, label: "GitHub" },
-  { href: "https://linkedin.com/in/brandon", icon: Linkedin, label: "LinkedIn" },
+  { href: "https://github.com/brandonbk", icon: Github, label: "GitHub" },
+  { href: "https://linkedin.com/in/brandonbk", icon: Linkedin, label: "LinkedIn" },
   { href: "mailto:brandon@example.com", icon: Mail, label: "Email" },
 ];
 
@@ -25,10 +25,10 @@ export function Footer() {
               <div className="w-10 h-10 rounded-lg bg-accent flex items-center justify-center">
                 <span className="font-display font-bold text-accent-foreground text-lg">B</span>
               </div>
-              <span className="font-display font-semibold text-foreground">Brandon</span>
+              <span className="font-display font-semibold text-foreground">Brandon Bk</span>
             </div>
             <p className="text-muted-foreground text-sm leading-relaxed">
-              Building scalable systems today — engineering AI-ready data for tomorrow.
+              Cross-Platform Software Engineer → Data & AI Engineering. Always following the flow of data.
             </p>
           </div>
 
@@ -70,10 +70,10 @@ export function Footer() {
 
         <div className="mt-12 pt-8 border-t border-border flex flex-col sm:flex-row justify-between items-center gap-4">
           <p className="text-muted-foreground text-sm">
-            © {new Date().getFullYear()} Brandon. All rights reserved.
+            © {new Date().getFullYear()} Brandon Bk. All rights reserved.
           </p>
           <p className="text-muted-foreground text-sm">
-            Built with passion for AI & Data Engineering
+            Adaptable • System-Focused • Growth-Oriented
           </p>
         </div>
       </div>

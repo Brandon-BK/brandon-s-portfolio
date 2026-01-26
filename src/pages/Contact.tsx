@@ -33,22 +33,22 @@ const Contact = () => {
 
   const contactLinks = [
     {
-      icon: Mail,
-      label: "Email",
-      value: "brandon@example.com",
-      href: "mailto:brandon@example.com",
+      icon: Github,
+      label: "GitHub",
+      value: "github.com/brandonbk",
+      href: "https://github.com/brandonbk",
     },
     {
       icon: Linkedin,
       label: "LinkedIn",
-      value: "linkedin.com/in/brandon",
-      href: "https://linkedin.com/in/brandon",
+      value: "linkedin.com/in/brandonbk",
+      href: "https://linkedin.com/in/brandonbk",
     },
     {
-      icon: Github,
-      label: "GitHub",
-      value: "github.com/brandon",
-      href: "https://github.com/brandon",
+      icon: Mail,
+      label: "Email",
+      value: "brandon@example.com",
+      href: "mailto:brandon@example.com",
     },
   ];
 
@@ -66,7 +66,7 @@ const Contact = () => {
               Let's Connect
             </h1>
             <p className="text-xl text-muted-foreground leading-relaxed">
-              Whether you're looking to collaborate, discuss opportunities, or just chat about data engineering and AI — I'd love to hear from you.
+              Looking for a versatile engineer who can contribute across the stack and grow into data and AI systems? Let's connect.
             </p>
           </motion.div>
 
@@ -182,10 +182,19 @@ const Contact = () => {
                 </p>
               </div>
 
+              {/* Status Card */}
               <div className="p-8 rounded-2xl bg-accent/10 border border-accent/20">
-                <p className="font-display text-lg text-foreground font-medium">
-                  "Let's build intelligent systems together."
-                </p>
+                <div className="space-y-3">
+                  <p className="text-sm text-muted-foreground">
+                    <span className="font-medium text-foreground">Currently:</span> Cross-Platform Software Engineer
+                  </p>
+                  <p className="text-sm text-muted-foreground">
+                    <span className="font-medium text-foreground">Growing into:</span> Data & AI Engineering
+                  </p>
+                  <p className="text-sm text-muted-foreground">
+                    <span className="font-medium text-foreground">Core Principle:</span> Always follow the flow of data
+                  </p>
+                </div>
               </div>
             </motion.div>
           </div>
