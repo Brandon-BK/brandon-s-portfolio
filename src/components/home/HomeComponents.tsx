@@ -76,7 +76,7 @@ export function HeroSection() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-lg md:text-xl text-primary-foreground/70 mb-10 max-w-2xl mx-auto"
           >
-            Cross-Platform Software Engineer • Cloud & DevOps • Data & AI (In Progress)
+            Cross-Platform Software Developer • Cloud Systems • Data & AI (In Progress)
           </motion.p>
 
           {/* CTAs */}
@@ -115,7 +115,7 @@ export function HeroSection() {
             <div className="font-mono text-sm text-primary-foreground/80">
               <span className="text-accent">$</span> brandon.current_focus
               <br />
-              <span className="text-accent/70">→</span> ["cross_platform", "cloud_devops", "data_engineering", "ai_pipelines"]
+              <span className="text-accent/70">→</span> ["cross_platform", "cloud_systems", "data_engineering", "ai_pipelines"]
               <br />
               <span className="text-accent">$</span> brandon.core_principle
               <br />
@@ -149,7 +149,7 @@ export function WhatIDoSection() {
     {
       icon: Cloud,
       title: "Cloud & Containerized Systems",
-      description: "Deploy using AWS ECS containers, build Docker images, manage serverless architectures, and schedule workflows for reliability.",
+      description: "Deploy using AWS ECS containers, build Docker images, manage serverless architectures, and monitor workflows for reliability.",
     },
     {
       icon: Brain,
@@ -223,10 +223,11 @@ export function FeaturedProjectsSection() {
       href: "/projects#cloud-systems",
     },
     {
-      title: "Cross-Platform Applications",
-      description: "Full-stack systems with React.js, Next.js, API integrations, responsive design, and database integrations.",
+      title: "SJP Cross-Platform Application",
+      description: "Full-stack system with React.js, Next.js, API integrations, responsive design, and database integrations.",
       tags: ["React.js", "Next.js", "Node.js", "MongoDB"],
-      href: "/projects#cross-platform",
+      href: "https://sjp-j2tp.vercel.app/",
+      external: true,
     },
   ];
 
@@ -266,24 +267,47 @@ export function FeaturedProjectsSection() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="group"
             >
-              <Link
-                to={project.href}
-                className="block card-elevated p-8 rounded-2xl border border-border h-full hover:border-accent/30 transition-all"
-              >
-                <h3 className="font-display text-xl font-semibold text-foreground mb-3 group-hover:text-accent transition-colors">
-                  {project.title}
-                </h3>
-                <p className="text-muted-foreground mb-6 leading-relaxed">
-                  {project.description}
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  {project.tags.map((tag) => (
-                    <span key={tag} className="tech-badge text-xs">
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              </Link>
+              {project.external ? (
+                <a
+                  href={project.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block card-elevated p-8 rounded-2xl border border-border h-full hover:border-accent/30 transition-all"
+                >
+                  <h3 className="font-display text-xl font-semibold text-foreground mb-3 group-hover:text-accent transition-colors">
+                    {project.title}
+                  </h3>
+                  <p className="text-muted-foreground mb-6 leading-relaxed">
+                    {project.description}
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    {project.tags.map((tag) => (
+                      <span key={tag} className="tech-badge text-xs">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </a>
+              ) : (
+                <Link
+                  to={project.href}
+                  className="block card-elevated p-8 rounded-2xl border border-border h-full hover:border-accent/30 transition-all"
+                >
+                  <h3 className="font-display text-xl font-semibold text-foreground mb-3 group-hover:text-accent transition-colors">
+                    {project.title}
+                  </h3>
+                  <p className="text-muted-foreground mb-6 leading-relaxed">
+                    {project.description}
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    {project.tags.map((tag) => (
+                      <span key={tag} className="tech-badge text-xs">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </Link>
+              )}
             </motion.div>
           ))}
         </div>

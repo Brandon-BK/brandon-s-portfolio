@@ -34,7 +34,7 @@ const skillCategories: SkillCategory[] = [
     skills: [
       { name: "Node.js", level: 80, status: "proficient" },
       { name: "REST APIs", level: 85, status: "proficient" },
-      { name: "Python Data Pipelines", level: 75, status: "proficient" },
+      { name: "Python", level: 80, status: "proficient" },
     ],
   },
   {
@@ -42,20 +42,20 @@ const skillCategories: SkillCategory[] = [
     skills: [
       { name: "SQL / Relational DBs", level: 85, status: "proficient" },
       { name: "MongoDB", level: 75, status: "proficient" },
-      { name: "Firebase", level: 70, status: "proficient" },
-      { name: "AWS DynamoDB", level: 65, status: "learning" },
+      { name: "Firebase", level: 100, status: "proficient" },
+      { name: "AWS DynamoDB", level: 100, status: "proficient" },
     ],
   },
   {
     title: "Cloud & Containers (AWS)",
     skills: [
-      { name: "EC2, Lambda, S3", level: 85, status: "proficient" },
-      { name: "IAM, KMS", level: 80, status: "proficient" },
-      { name: "CloudWatch, Step Functions", level: 75, status: "proficient" },
-      { name: "ECS, Docker, Batch Jobs", level: 80, status: "proficient" },
-      { name: "Athena, SWF", level: 65, status: "learning" },
+      { name: "EC2, Lambda, S3", level: 100, status: "proficient" },
+      { name: "IAM", level: 100, status: "proficient" },
+      { name: "CloudWatch, Step Functions", level: 100, status: "proficient" },
+      { name: "ECS, Docker, Batch Jobs", level: 100, status: "proficient" },
+      { name: "Athena, SWF", level: 100, status: "proficient" },
       { name: "Amazon Bedrock", level: 50, status: "exploring" },
-      { name: "CodeCommit", level: 70, status: "proficient" },
+      { name: "CodeCommit", level: 100, status: "proficient" },
     ],
   },
   {
