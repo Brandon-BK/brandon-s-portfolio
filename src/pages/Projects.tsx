@@ -17,7 +17,25 @@ interface Project {
   featured?: boolean;
 }
 
-const projects: Project[] = [
+const myProjects: Project[] = [
+  {
+    id: "sjp-application",
+    title: "SJP Cross-Platform Application",
+    category: "Full-Stack Development",
+    problem: "Organizations need complete systems that work seamlessly across frontend, backend, and cloud infrastructure with excellent user experience.",
+    solution: "Built a comprehensive full-stack application using React.js and Next.js for the frontend, with API integrations, responsive design, and modern UI/UX principles.",
+    tags: ["React.js", "Next.js", "Node.js", "MongoDB", "Responsive Design"],
+    learnings: [
+      "Advanced React patterns",
+      "Performance optimization",
+      "User-centered design",
+    ],
+    demo: "https://sjp-j2tp.vercel.app/",
+    featured: true,
+  },
+];
+
+const workProjects: Project[] = [
   {
     id: "data-automation",
     title: "Data Automation & Reporting",
@@ -40,7 +58,7 @@ const projects: Project[] = [
   {
     id: "cloud-systems",
     title: "Cloud & Containerized Systems",
-    category: "Cloud & DevOps",
+    category: "Cloud Infrastructure",
     problem: "Need for scalable, automated, and event-driven architectures that can handle varying workloads reliably.",
     solution: "Built scalable infrastructure using AWS ECS containers, Docker image deployments, batch job scheduling, serverless workflows, and comprehensive CloudWatch monitoring.",
     tags: ["AWS ECS", "Docker", "Lambda", "Step Functions", "CloudWatch", "S3"],
@@ -51,20 +69,9 @@ const projects: Project[] = [
     ],
     featured: true,
   },
-  {
-    id: "cross-platform",
-    title: "Cross-Platform Applications",
-    category: "Full-Stack Development",
-    problem: "Organizations need complete systems that work seamlessly across frontend, backend, and cloud infrastructure.",
-    solution: "Delivered full-stack projects using React.js and Next.js for frontend, Node.js and Python for backend, with API integrations, responsive design, and database integrations using MongoDB, Firebase, and AWS databases.",
-    tags: ["React.js", "Next.js", "Node.js", "MongoDB", "Firebase", "REST APIs"],
-    learnings: [
-      "Component architecture patterns",
-      "API design and integration",
-      "Responsive design principles",
-    ],
-    featured: true,
-  },
+];
+
+const exploratoryProjects: Project[] = [
   {
     id: "data-engineering",
     title: "Data Engineering Projects",
@@ -94,9 +101,6 @@ const projects: Project[] = [
 ];
 
 const Projects = () => {
-  const featuredProjects = projects.filter((p) => p.featured);
-  const otherProjects = projects.filter((p) => !p.featured);
-
   return (
     <Layout>
       {/* Hero */}
@@ -116,128 +120,249 @@ const Projects = () => {
             </p>
           </motion.div>
 
-          {/* Featured Projects */}
-          <div className="space-y-8 mb-20">
-            {featuredProjects.map((project, index) => (
-              <motion.div
-                key={project.id}
-                id={project.id}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="card-elevated p-8 md:p-10 rounded-2xl border border-border"
-              >
-                <div className="grid lg:grid-cols-3 gap-8">
-                  {/* Main Content */}
-                  <div className="lg:col-span-2">
-                    <span className="text-xs font-medium text-accent uppercase tracking-wider">
-                      {project.category}
-                    </span>
-                    <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-4 mt-2">
-                      {project.title}
-                    </h2>
-                    
-                    <div className="space-y-4 mb-6">
-                      <div>
-                        <h3 className="text-sm font-semibold text-accent uppercase tracking-wider mb-2">
-                          Problem
-                        </h3>
-                        <p className="text-muted-foreground leading-relaxed">
-                          {project.problem}
-                        </p>
-                      </div>
-                      <div>
-                        <h3 className="text-sm font-semibold text-accent uppercase tracking-wider mb-2">
-                          Solution
-                        </h3>
-                        <p className="text-muted-foreground leading-relaxed">
-                          {project.solution}
-                        </p>
-                      </div>
-                    </div>
-
-                    <div className="flex flex-wrap gap-2 mb-6">
-                      {project.tags.map((tag) => (
-                        <span key={tag} className="tech-badge">
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-
-                    <div className="flex gap-4">
-                      {project.github && (
-                        <Button variant="outline" size="sm" asChild>
-                          <a href={project.github} target="_blank" rel="noopener noreferrer">
-                            <Github className="w-4 h-4" />
-                            View Code
-                          </a>
-                        </Button>
-                      )}
-                      {project.demo && (
-                        <Button variant="hero" size="sm" asChild>
-                          <a href={project.demo} target="_blank" rel="noopener noreferrer">
-                            <ExternalLink className="w-4 h-4" />
-                            Live Demo
-                          </a>
-                        </Button>
-                      )}
-                    </div>
+          {/* My Projects - Featured Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="mb-16"
+          >
+            <div className="flex items-center gap-4 mb-8">
+              <div className="w-3 h-3 rounded-full bg-accent animate-pulse" />
+              <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground">
+                My Projects
+              </h2>
+            </div>
+            
+            <div className="grid gap-8">
+              {myProjects.map((project, index) => (
+                <motion.div
+                  key={project.id}
+                  id={project.id}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  className="relative overflow-hidden rounded-2xl border-2 border-accent bg-gradient-to-br from-accent/10 via-background to-accent/5 p-8 md:p-10"
+                >
+                  {/* Highlight badge */}
+                  <div className="absolute top-4 right-4 bg-accent text-accent-foreground text-xs font-bold px-3 py-1 rounded-full">
+                    LIVE PROJECT
                   </div>
-
-                  {/* Learnings & Impact */}
-                  <div className="space-y-6">
-                    <div className="bg-muted rounded-xl p-6">
-                      <h3 className="font-display text-lg font-semibold text-foreground mb-4">
-                        Key Learnings
+                  
+                  <div className="grid lg:grid-cols-3 gap-8">
+                    {/* Main Content */}
+                    <div className="lg:col-span-2">
+                      <span className="text-xs font-medium text-accent uppercase tracking-wider">
+                        {project.category}
+                      </span>
+                      <h3 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-4 mt-2">
+                        {project.title}
                       </h3>
-                      <ul className="space-y-3">
-                        {project.learnings.map((learning, i) => (
-                          <li key={i} className="flex items-start gap-3">
-                            <ArrowRight className="w-4 h-4 text-accent mt-1 flex-shrink-0" />
-                            <span className="text-muted-foreground text-sm">{learning}</span>
-                          </li>
+                      
+                      <div className="space-y-4 mb-6">
+                        <div>
+                          <h4 className="text-sm font-semibold text-accent uppercase tracking-wider mb-2">
+                            Problem
+                          </h4>
+                          <p className="text-muted-foreground leading-relaxed">
+                            {project.problem}
+                          </p>
+                        </div>
+                        <div>
+                          <h4 className="text-sm font-semibold text-accent uppercase tracking-wider mb-2">
+                            Solution
+                          </h4>
+                          <p className="text-muted-foreground leading-relaxed">
+                            {project.solution}
+                          </p>
+                        </div>
+                      </div>
+
+                      <div className="flex flex-wrap gap-2 mb-6">
+                        {project.tags.map((tag) => (
+                          <span key={tag} className="tech-badge">
+                            {tag}
+                          </span>
                         ))}
-                      </ul>
+                      </div>
+
+                      <div className="flex gap-4">
+                        {project.github && (
+                          <Button variant="outline" size="sm" asChild>
+                            <a href={project.github} target="_blank" rel="noopener noreferrer">
+                              <Github className="w-4 h-4" />
+                              View Code
+                            </a>
+                          </Button>
+                        )}
+                        {project.demo && (
+                          <Button variant="hero" size="lg" asChild>
+                            <a href={project.demo} target="_blank" rel="noopener noreferrer">
+                              <ExternalLink className="w-4 h-4" />
+                              View Live Project
+                            </a>
+                          </Button>
+                        )}
+                      </div>
                     </div>
 
-                    {project.impact && (
-                      <div className="bg-accent/10 rounded-xl p-6 border border-accent/20">
-                        <h3 className="font-display text-lg font-semibold text-foreground mb-4 flex items-center gap-2">
-                          <TrendingUp className="w-5 h-5 text-accent" />
-                          Impact
-                        </h3>
+                    {/* Learnings */}
+                    <div className="space-y-6">
+                      <div className="bg-muted rounded-xl p-6">
+                        <h4 className="font-display text-lg font-semibold text-foreground mb-4">
+                          Key Learnings
+                        </h4>
                         <ul className="space-y-3">
-                          {project.impact.map((item, i) => (
+                          {project.learnings.map((learning, i) => (
                             <li key={i} className="flex items-start gap-3">
-                              <span className="text-accent font-bold">•</span>
-                              <span className="text-foreground text-sm font-medium">{item}</span>
+                              <ArrowRight className="w-4 h-4 text-accent mt-1 flex-shrink-0" />
+                              <span className="text-muted-foreground text-sm">{learning}</span>
                             </li>
                           ))}
                         </ul>
                       </div>
-                    )}
+                    </div>
                   </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
 
-          {/* Other Projects */}
-          {otherProjects.length > 0 && (
-            <>
-              <motion.h2
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5 }}
-                className="font-display text-2xl font-bold text-foreground mb-8"
-              >
+          {/* Work Experience Projects */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="mb-16"
+          >
+            <h2 className="font-display text-2xl font-bold text-foreground mb-8">
+              Professional Work
+            </h2>
+            
+            <div className="space-y-8">
+              {workProjects.map((project, index) => (
+                <motion.div
+                  key={project.id}
+                  id={project.id}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  className="card-elevated p-8 md:p-10 rounded-2xl border border-border"
+                >
+                  <div className="grid lg:grid-cols-3 gap-8">
+                    {/* Main Content */}
+                    <div className="lg:col-span-2">
+                      <span className="text-xs font-medium text-accent uppercase tracking-wider">
+                        {project.category}
+                      </span>
+                      <h3 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-4 mt-2">
+                        {project.title}
+                      </h3>
+                      
+                      <div className="space-y-4 mb-6">
+                        <div>
+                          <h4 className="text-sm font-semibold text-accent uppercase tracking-wider mb-2">
+                            Problem
+                          </h4>
+                          <p className="text-muted-foreground leading-relaxed">
+                            {project.problem}
+                          </p>
+                        </div>
+                        <div>
+                          <h4 className="text-sm font-semibold text-accent uppercase tracking-wider mb-2">
+                            Solution
+                          </h4>
+                          <p className="text-muted-foreground leading-relaxed">
+                            {project.solution}
+                          </p>
+                        </div>
+                      </div>
+
+                      <div className="flex flex-wrap gap-2 mb-6">
+                        {project.tags.map((tag) => (
+                          <span key={tag} className="tech-badge">
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+
+                      <div className="flex gap-4">
+                        {project.github && (
+                          <Button variant="outline" size="sm" asChild>
+                            <a href={project.github} target="_blank" rel="noopener noreferrer">
+                              <Github className="w-4 h-4" />
+                              View Code
+                            </a>
+                          </Button>
+                        )}
+                        {project.demo && (
+                          <Button variant="hero" size="sm" asChild>
+                            <a href={project.demo} target="_blank" rel="noopener noreferrer">
+                              <ExternalLink className="w-4 h-4" />
+                              Live Demo
+                            </a>
+                          </Button>
+                        )}
+                      </div>
+                    </div>
+
+                    {/* Learnings & Impact */}
+                    <div className="space-y-6">
+                      <div className="bg-muted rounded-xl p-6">
+                        <h4 className="font-display text-lg font-semibold text-foreground mb-4">
+                          Key Learnings
+                        </h4>
+                        <ul className="space-y-3">
+                          {project.learnings.map((learning, i) => (
+                            <li key={i} className="flex items-start gap-3">
+                              <ArrowRight className="w-4 h-4 text-accent mt-1 flex-shrink-0" />
+                              <span className="text-muted-foreground text-sm">{learning}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+
+                      {project.impact && (
+                        <div className="bg-accent/10 rounded-xl p-6 border border-accent/20">
+                          <h4 className="font-display text-lg font-semibold text-foreground mb-4 flex items-center gap-2">
+                            <TrendingUp className="w-5 h-5 text-accent" />
+                            Impact
+                          </h4>
+                          <ul className="space-y-3">
+                            {project.impact.map((item, i) => (
+                              <li key={i} className="flex items-start gap-3">
+                                <span className="text-accent font-bold">•</span>
+                                <span className="text-foreground text-sm font-medium">{item}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* Exploratory Projects */}
+          {exploratoryProjects.length > 0 && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+            >
+              <h2 className="font-display text-2xl font-bold text-foreground mb-8">
                 In Progress & Exploratory
-              </motion.h2>
+              </h2>
               
               <div className="grid md:grid-cols-2 gap-6">
-                {otherProjects.map((project, index) => (
+                {exploratoryProjects.map((project, index) => (
                   <motion.div
                     key={project.id}
                     id={project.id}
@@ -274,7 +399,7 @@ const Projects = () => {
                   </motion.div>
                 ))}
               </div>
-            </>
+            </motion.div>
           )}
         </div>
       </section>

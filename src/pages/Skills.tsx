@@ -40,7 +40,6 @@ const skillCategories: SkillCategory[] = [
   {
     title: "Databases & Data Stores",
     skills: [
-      { name: "SQL / Relational DBs", level: 85, status: "proficient" },
       { name: "MongoDB", level: 75, status: "proficient" },
       { name: "Firebase", level: 100, status: "proficient" },
       { name: "AWS DynamoDB", level: 100, status: "proficient" },
@@ -54,7 +53,7 @@ const skillCategories: SkillCategory[] = [
       { name: "CloudWatch, Step Functions", level: 100, status: "proficient" },
       { name: "ECS, Docker, Batch Jobs", level: 100, status: "proficient" },
       { name: "Athena, SWF", level: 100, status: "proficient" },
-      { name: "Amazon Bedrock", level: 50, status: "exploring" },
+      { name: "Amazon Bedrock", level: 75, status: "learning" },
       { name: "CodeCommit", level: 100, status: "proficient" },
     ],
   },
