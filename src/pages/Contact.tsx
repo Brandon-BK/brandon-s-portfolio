@@ -6,6 +6,8 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useState } from "react";
 import { toast } from "@/hooks/use-toast";
+import emailjs from "@emailjs/browser";
+
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -14,41 +16,59 @@ const Contact = () => {
     message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+  setIsSubmitting(true);
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-    
+  try {
+   await emailjs.send(
+      "service_o4x4hjn",          
+      "template_qhy768j",        
+      {
+        from_name: formData.name,
+        from_email: formData.email,
+        message: formData.message,
+      },
+      "JvXooUDewHT7MoynL"
+    );
+
     toast({
       title: "Message sent!",
       description: "Thanks for reaching out. I'll get back to you soon.",
     });
-    
+
     setFormData({ name: "", email: "", message: "" });
+  } catch (error) {
+    toast({
+      title: "Error sending message",
+      description: "Something went wrong. Please try again later.",
+      variant: "destructive",
+    });
+    console.error(error);
+  } finally {
     setIsSubmitting(false);
-  };
+  }
+};
+
 
   const contactLinks = [
     {
       icon: Github,
       label: "GitHub",
-      value: "github.com/brandonbk",
-      href: "https://github.com/brandonbk",
+      value: "github.com/Brandon-BK",
+      href: "https://github.com/Brandon-BK",
     },
     {
       icon: Linkedin,
       label: "LinkedIn",
-      value: "linkedin.com/in/brandonbk",
-      href: "https://linkedin.com/in/brandonbk",
+      value: "www.linkedin.com/in/brandon-kisibu-b96a6b226",
+      href: "https://www.linkedin.com/in/brandon-kisibu-b96a6b226",
     },
     {
       icon: Mail,
       label: "Email",
-      value: "brandon@example.com",
-      href: "mailto:brandon@example.com",
+      value: "kisibubrandon5@gmail.com",
+      href: "mailto:kisibubrandon5@gmail.com",
     },
   ];
 
