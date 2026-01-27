@@ -106,9 +106,13 @@ export function HeroSection() {
               </Link>
             </Button>
             <Button variant="heroOutline" size="lg" asChild>
-              <a href="/resume.pdf" download>
+              <a
+                href="/Brandon_Kisibu_CV.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Download className="w-5 h-5" />
-                Download CV
+                View CV
               </a>
             </Button>
           </motion.div>
