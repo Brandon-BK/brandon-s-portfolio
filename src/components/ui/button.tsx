@@ -18,7 +18,7 @@ const buttonVariants = cva(
         // Hero button - gradient accent with glow effect
         hero: "bg-accent text-accent-foreground hover:brightness-110 shadow-lg hover:shadow-xl",
         // Hero outline - transparent with accent border
-        heroOutline: "border-2 border-accent text-foreground hover:bg-accent hover:text-accent-foreground",
+        heroOutline: "border-2 border-accent text-white hover:bg-accent hover:text-accent-foreground",
         // Nav link style
         nav: "text-muted-foreground hover:text-foreground bg-transparent",
       },

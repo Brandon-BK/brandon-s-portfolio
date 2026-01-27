@@ -29,7 +29,7 @@ const About = () => {
   ];
 
   const careerPath = [
-    { stage: "Current", role: "Cross-Platform Software Engineer", status: "active" },
+    { stage: "Current", role: "Cross-Platform Software Developer", status: "active" },
     { stage: "Growing Into", role: "Data & AI Engineering", status: "upcoming" },
     { stage: "Core Principle", role: "Always Follow the Flow of Data", status: "goal" },
   ];
@@ -49,7 +49,7 @@ const About = () => {
               About Me
             </h1>
             <p className="text-xl text-muted-foreground leading-relaxed mb-8">
-              I'm a results-driven cross-platform software engineer who builds fast, scalable, and user-focused web applications while working across frontend, backend, cloud, and databases.
+              I'm a results-driven cross-platform software developer who builds fast, scalable, and user-focused web applications while working across frontend, backend, cloud, and databases.
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed mb-8">
               I specialize in React.js, Next.js, JavaScript, HTML5, and CSS, and I'm proficient in Python and SQL. I always follow the flow of data, designing systems that are reliable, automated, and AI-ready.
@@ -75,7 +75,7 @@ const About = () => {
               How I Work
             </h2>
             <p className="text-muted-foreground text-lg leading-relaxed">
-              I work primarily as a cross-platform engineer, moving fluidly between frontend, backend, cloud infrastructure, and data workflows depending on the team's needs. Some days I design UI/UX and wireframes, other days I build backend services, automate data pipelines, or manage cloud systems.
+              I work primarily as a cross-platform developer, moving fluidly between frontend, backend, cloud infrastructure, and data workflows depending on the team's needs. Some days I design UI/UX and wireframes, other days I build backend services, automate data pipelines, or manage cloud systems.
             </p>
           </motion.div>
 

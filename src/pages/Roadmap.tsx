@@ -28,7 +28,7 @@ const roadmapPhases: Phase[] = [
       { name: "RESTful API design", completed: true },
       { name: "AWS fundamentals (EC2, Lambda, S3, IAM)", completed: true },
       { name: "Containerized systems (Docker, ECS)", completed: true },
-      { name: "CI/CD & version control", completed: true },
+      { name: "Version control", completed: true },
     ],
   },
   {
