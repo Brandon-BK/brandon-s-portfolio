@@ -28,7 +28,7 @@ export function Navbar() {
               <span className="font-display font-bold text-accent-foreground text-lg">B</span>
             </div>
             <span className="font-display font-semibold text-foreground hidden sm:block">
-              Brandon Bk
+              Brandon Kisibu
             </span>
           </Link>
 
