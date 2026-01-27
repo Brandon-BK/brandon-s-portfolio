@@ -1,11 +1,20 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { ArrowRight, Download, Code, Cloud, Database, Brain, Server, Palette } from "lucide-react";
+import {
+  ArrowRight,
+  Download,
+  Code,
+  Cloud,
+  Database,
+  Brain,
+  Server,
+  Palette,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export function HeroSection() {
   return (
-    <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden hero-gradient">
+    <section className="relative min-h-[100vh] flex items-center justify-center overflow-hidden hero-gradient">
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden">
         {/* Data particles */}
@@ -29,17 +38,17 @@ export function HeroSection() {
             }}
           />
         ))}
-        
+
         {/* Grid pattern */}
-        <div 
+        <div
           className="absolute inset-0 opacity-5"
           style={{
             backgroundImage: `linear-gradient(hsl(var(--accent)) 1px, transparent 1px),
                               linear-gradient(90deg, hsl(var(--accent)) 1px, transparent 1px)`,
-            backgroundSize: '60px 60px',
+            backgroundSize: "60px 60px",
           }}
         />
-        
+
         {/* Gradient overlays */}
         <div className="absolute top-0 left-0 w-96 h-96 bg-accent/10 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
         <div className="absolute bottom-0 right-0 w-96 h-96 bg-accent/5 rounded-full blur-3xl translate-x-1/2 translate-y-1/2" />
@@ -55,7 +64,9 @@ export function HeroSection() {
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 border border-accent/20 mb-8"
           >
             <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
-            <span className="text-primary-foreground text-sm font-medium">Open to opportunities</span>
+            <span className="text-primary-foreground text-sm font-medium">
+              Open to opportunities
+            </span>
           </motion.div>
 
           {/* Headline */}
@@ -66,7 +77,8 @@ export function HeroSection() {
             className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground leading-tight mb-6"
           >
             Building scalable systems today —{" "}
-            <span className="text-gradient">engineering AI-ready data</span> for tomorrow.
+            <span className="text-gradient">engineering AI-ready data</span> for
+            tomorrow.
           </motion.h1>
 
           {/* Subheadline */}
@@ -76,7 +88,8 @@ export function HeroSection() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-lg md:text-xl text-primary-foreground/70 mb-10 max-w-2xl mx-auto"
           >
-            Cross-Platform Software Developer • Cloud Systems • Data & AI (In Progress)
+            Cross-Platform Software Developer • Cloud Systems • Data & AI (In
+            Progress)
           </motion.p>
 
           {/* CTAs */}
@@ -115,11 +128,13 @@ export function HeroSection() {
             <div className="font-mono text-sm text-primary-foreground/80">
               <span className="text-accent">$</span> brandon.current_focus
               <br />
-              <span className="text-accent/70">→</span> ["cross_platform", "cloud_systems", "data_engineering", "ai_pipelines"]
+              <span className="text-accent/70">→</span> ["cross_platform",
+              "cloud_systems", "data_engineering", "ai_pipelines"]
               <br />
               <span className="text-accent">$</span> brandon.core_principle
               <br />
-              <span className="text-accent/70">→</span> "Always follow the flow of data"
+              <span className="text-accent/70">→</span> "Always follow the flow
+              of data"
               <span className="cursor-blink">▋</span>
             </div>
           </motion.div>
@@ -134,32 +149,38 @@ export function WhatIDoSection() {
     {
       icon: Code,
       title: "Cross-Platform Development",
-      description: "Build responsive web and mobile-friendly applications with React.js and Next.js. Apply UI/UX design principles for exceptional user experiences.",
+      description:
+        "Build responsive web and mobile-friendly applications with React.js and Next.js. Apply UI/UX design principles for exceptional user experiences.",
     },
     {
       icon: Server,
       title: "Backend & APIs",
-      description: "Design and consume RESTful APIs. Build backend services with Node.js and Python. Integrate databases and manage business logic.",
+      description:
+        "Design and consume RESTful APIs. Build backend services with Node.js and Python. Integrate databases and manage business logic.",
     },
     {
       icon: Database,
       title: "Databases & Data Management",
-      description: "SQL for relational data modeling, MongoDB for document-based apps, Firebase for realtime applications, AWS databases for cloud-native storage.",
+      description:
+        "SQL for relational data modeling, MongoDB for document-based apps, Firebase for realtime applications, AWS databases for cloud-native storage.",
     },
     {
       icon: Cloud,
       title: "Cloud & Containerized Systems",
-      description: "Deploy using AWS ECS containers, build Docker images, manage serverless architectures, and monitor workflows for reliability.",
+      description:
+        "Deploy using AWS ECS containers, build Docker images, manage serverless architectures, and monitor workflows for reliability.",
     },
     {
       icon: Brain,
       title: "Data & AI Foundations",
-      description: "Build data pipelines, ETL processes for analytics, prepare datasets for AI/ML workflows, and automate business reporting.",
+      description:
+        "Build data pipelines, ETL processes for analytics, prepare datasets for AI/ML workflows, and automate business reporting.",
     },
     {
       icon: Palette,
       title: "Design & Collaboration",
-      description: "UI/UX design and wireframing with Figma. Problem-solving, time management, teamwork, and attention to detail.",
+      description:
+        "UI/UX design and wireframing with Figma. Problem-solving, time management, teamwork, and attention to detail.",
     },
   ];
 
@@ -177,7 +198,8 @@ export function WhatIDoSection() {
             What I Do
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Adaptable, system-focused, growth-oriented — moving fluidly between frontend, backend, cloud, and data workflows
+            Adaptable, system-focused, growth-oriented — moving fluidly between
+            frontend, backend, cloud, and data workflows
           </p>
         </motion.div>
 
@@ -212,19 +234,22 @@ export function FeaturedProjectsSection() {
   const projects = [
     {
       title: "Data Automation & Reporting",
-      description: "ECS batch jobs and Docker images generating daily, weekly, and monthly sales reports. Reduced manual reporting time by 80%.",
+      description:
+        "ECS batch jobs and Docker images generating daily, weekly, and monthly sales reports. Reduced manual reporting time by 80%.",
       tags: ["Python", "SQL", "Docker", "AWS ECS", "S3"],
       href: "/projects#data-automation",
     },
     {
       title: "Cloud & Containerized Systems",
-      description: "Scalable, automated, event-driven architectures with AWS ECS, Docker deployments, and CloudWatch monitoring.",
+      description:
+        "Scalable, automated, event-driven architectures with AWS ECS, Docker deployments, and CloudWatch monitoring.",
       tags: ["AWS", "Docker", "ECS", "CloudWatch"],
       href: "/projects#cloud-systems",
     },
     {
       title: "SJP Cross-Platform Application",
-      description: "Full-stack system with React.js, Next.js, API integrations, responsive design, and database integrations.",
+      description:
+        "A modern, responsive portfolio website showcasing the SirJoshPlz brand’s creative media projects and professional work. The site features intuitive navigation and dynamic content management for an engaging user experience",
       tags: ["React.js", "Next.js", "Node.js", "MongoDB"],
       href: "https://sjp-j2tp.vercel.app/",
       external: true,
@@ -246,7 +271,8 @@ export function FeaturedProjectsSection() {
               Featured Projects
             </h2>
             <p className="text-muted-foreground text-lg max-w-xl">
-              Real-world solutions demonstrating my journey from software to data engineering
+              Real-world solutions demonstrating my journey from software to
+              data engineering
             </p>
           </div>
           <Button variant="outline" asChild>

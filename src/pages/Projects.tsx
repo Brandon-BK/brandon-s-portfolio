@@ -20,11 +20,11 @@ interface Project {
 const myProjects: Project[] = [
   {
     id: "sjp-application",
-    title: "SJP Cross-Platform Application",
-    category: "Full-Stack Development",
-    problem: "Organizations need complete systems that work seamlessly across frontend, backend, and cloud infrastructure with excellent user experience.",
-    solution: "Built a comprehensive full-stack application using React.js and Next.js for the frontend, with API integrations, responsive design, and modern UI/UX principles.",
-    tags: ["React.js", "Next.js", "Node.js", "MongoDB", "Responsive Design"],
+    title: "SJP CReative Studios",
+    category: "",
+    problem: "",
+    solution: "",
+    tags: ["React.js", "Firebase", "Responsive Design"],
     learnings: [
       "Advanced React patterns",
       "Performance optimization",
@@ -40,9 +40,19 @@ const workProjects: Project[] = [
     id: "data-automation",
     title: "Data Automation & Reporting",
     category: "Data Engineering",
-    problem: "Manual reporting processes consumed significant time and were prone to errors, delaying critical business insights.",
-    solution: "Developed batch jobs using ECS containers and Docker images. Created Python scripts and SQL code to generate daily, weekly, and monthly sales reports for companies like Sakso and The Beverage Company. Extracted logs, processed data for specific date ranges, and automated uploads/downloads.",
-    tags: ["Python", "SQL", "Docker", "AWS ECS", "Batch Jobs", "S3", "CloudWatch"],
+    problem:
+      "Manual reporting processes consumed significant time and were prone to errors, delaying critical business insights.",
+    solution:
+      "Developed batch jobs using ECS containers and Docker images. Created Python scripts and SQL code to generate daily, weekly, and monthly sales reports for companies like Sakso and The Beverage Company. Extracted logs, processed data for specific date ranges, and automated uploads/downloads.",
+    tags: [
+      "Python",
+      "SQL",
+      "Docker",
+      "AWS ECS",
+      "Batch Jobs",
+      "S3",
+      "CloudWatch",
+    ],
     learnings: [
       "Container orchestration with ECS",
       "Reliable job scheduling patterns",
@@ -59,8 +69,10 @@ const workProjects: Project[] = [
     id: "cloud-systems",
     title: "Cloud & Containerized Systems",
     category: "Cloud Infrastructure",
-    problem: "Need for scalable, automated, and event-driven architectures that can handle varying workloads reliably.",
-    solution: "Built scalable infrastructure using AWS ECS containers, Docker image deployments, batch job scheduling, serverless workflows, and comprehensive CloudWatch monitoring.",
+    problem:
+      "Need for scalable, automated, and event-driven architectures that can handle varying workloads reliably.",
+    solution:
+      "Built scalable infrastructure using AWS ECS containers, Docker image deployments, batch job scheduling, serverless workflows, and comprehensive CloudWatch monitoring.",
     tags: ["AWS ECS", "Docker", "Lambda", "Step Functions", "CloudWatch", "S3"],
     learnings: [
       "Event-driven architecture patterns",
@@ -76,8 +88,10 @@ const exploratoryProjects: Project[] = [
     id: "data-engineering",
     title: "Data Engineering Projects",
     category: "Data Engineering (In Progress)",
-    problem: "Building stronger foundations in data engineering to prepare for AI-ready systems.",
-    solution: "Working on SQL analytics, Athena queries, ETL pipelines, and data preparation workflows to strengthen data engineering skills.",
+    problem:
+      "Building stronger foundations in data engineering to prepare for AI-ready systems.",
+    solution:
+      "Working on SQL analytics, Athena queries, ETL pipelines, and data preparation workflows to strengthen data engineering skills.",
     tags: ["SQL", "Athena", "ETL", "Python", "Data Modeling"],
     learnings: [
       "SQL analytics and optimization",
@@ -89,9 +103,16 @@ const exploratoryProjects: Project[] = [
     id: "ai-pipelines",
     title: "AI-Ready Pipelines",
     category: "AI/ML (Exploratory)",
-    problem: "Preparing data and infrastructure for machine learning and AI workflows.",
-    solution: "Exploring feature engineering, dataset validation, and Amazon Bedrock experimentation to build AI-ready data pipelines.",
-    tags: ["Python", "Amazon Bedrock", "Feature Engineering", "Data Validation"],
+    problem:
+      "Preparing data and infrastructure for machine learning and AI workflows.",
+    solution:
+      "Exploring feature engineering, dataset validation, and Amazon Bedrock experimentation to build AI-ready data pipelines.",
+    tags: [
+      "Python",
+      "Amazon Bedrock",
+      "Feature Engineering",
+      "Data Validation",
+    ],
     learnings: [
       "Feature engineering concepts",
       "Dataset quality validation",
@@ -116,7 +137,8 @@ const Projects = () => {
               Projects
             </h1>
             <p className="text-xl text-muted-foreground leading-relaxed">
-              Real-world projects demonstrating my journey across cross-platform development, cloud systems, and data engineering.
+              Real-world projects demonstrating my journey across cross-platform
+              development, cloud systems, and data engineering.
             </p>
           </motion.div>
 
@@ -134,7 +156,7 @@ const Projects = () => {
                 My Projects
               </h2>
             </div>
-            
+
             <div className="grid gap-8">
               {myProjects.map((project, index) => (
                 <motion.div
@@ -150,7 +172,7 @@ const Projects = () => {
                   <div className="absolute top-4 right-4 bg-accent text-accent-foreground text-xs font-bold px-3 py-1 rounded-full">
                     LIVE PROJECT
                   </div>
-                  
+
                   <div className="grid lg:grid-cols-3 gap-8">
                     {/* Main Content */}
                     <div className="lg:col-span-2">
@@ -160,25 +182,6 @@ const Projects = () => {
                       <h3 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-4 mt-2">
                         {project.title}
                       </h3>
-                      
-                      <div className="space-y-4 mb-6">
-                        <div>
-                          <h4 className="text-sm font-semibold text-accent uppercase tracking-wider mb-2">
-                            Problem
-                          </h4>
-                          <p className="text-muted-foreground leading-relaxed">
-                            {project.problem}
-                          </p>
-                        </div>
-                        <div>
-                          <h4 className="text-sm font-semibold text-accent uppercase tracking-wider mb-2">
-                            Solution
-                          </h4>
-                          <p className="text-muted-foreground leading-relaxed">
-                            {project.solution}
-                          </p>
-                        </div>
-                      </div>
 
                       <div className="flex flex-wrap gap-2 mb-6">
                         {project.tags.map((tag) => (
@@ -191,7 +194,11 @@ const Projects = () => {
                       <div className="flex gap-4">
                         {project.github && (
                           <Button variant="outline" size="sm" asChild>
-                            <a href={project.github} target="_blank" rel="noopener noreferrer">
+                            <a
+                              href={project.github}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            >
                               <Github className="w-4 h-4" />
                               View Code
                             </a>
@@ -199,7 +206,11 @@ const Projects = () => {
                         )}
                         {project.demo && (
                           <Button variant="hero" size="lg" asChild>
-                            <a href={project.demo} target="_blank" rel="noopener noreferrer">
+                            <a
+                              href={project.demo}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            >
                               <ExternalLink className="w-4 h-4" />
                               View Live Project
                             </a>
@@ -218,7 +229,9 @@ const Projects = () => {
                           {project.learnings.map((learning, i) => (
                             <li key={i} className="flex items-start gap-3">
                               <ArrowRight className="w-4 h-4 text-accent mt-1 flex-shrink-0" />
-                              <span className="text-muted-foreground text-sm">{learning}</span>
+                              <span className="text-muted-foreground text-sm">
+                                {learning}
+                              </span>
                             </li>
                           ))}
                         </ul>
@@ -241,7 +254,7 @@ const Projects = () => {
             <h2 className="font-display text-2xl font-bold text-foreground mb-8">
               Professional Work
             </h2>
-            
+
             <div className="space-y-8">
               {workProjects.map((project, index) => (
                 <motion.div
@@ -262,7 +275,7 @@ const Projects = () => {
                       <h3 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-4 mt-2">
                         {project.title}
                       </h3>
-                      
+
                       <div className="space-y-4 mb-6">
                         <div>
                           <h4 className="text-sm font-semibold text-accent uppercase tracking-wider mb-2">
@@ -293,7 +306,11 @@ const Projects = () => {
                       <div className="flex gap-4">
                         {project.github && (
                           <Button variant="outline" size="sm" asChild>
-                            <a href={project.github} target="_blank" rel="noopener noreferrer">
+                            <a
+                              href={project.github}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            >
                               <Github className="w-4 h-4" />
                               View Code
                             </a>
@@ -301,7 +318,11 @@ const Projects = () => {
                         )}
                         {project.demo && (
                           <Button variant="hero" size="sm" asChild>
-                            <a href={project.demo} target="_blank" rel="noopener noreferrer">
+                            <a
+                              href={project.demo}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            >
                               <ExternalLink className="w-4 h-4" />
                               Live Demo
                             </a>
@@ -320,7 +341,9 @@ const Projects = () => {
                           {project.learnings.map((learning, i) => (
                             <li key={i} className="flex items-start gap-3">
                               <ArrowRight className="w-4 h-4 text-accent mt-1 flex-shrink-0" />
-                              <span className="text-muted-foreground text-sm">{learning}</span>
+                              <span className="text-muted-foreground text-sm">
+                                {learning}
+                              </span>
                             </li>
                           ))}
                         </ul>
@@ -336,7 +359,9 @@ const Projects = () => {
                             {project.impact.map((item, i) => (
                               <li key={i} className="flex items-start gap-3">
                                 <span className="text-accent font-bold">•</span>
-                                <span className="text-foreground text-sm font-medium">{item}</span>
+                                <span className="text-foreground text-sm font-medium">
+                                  {item}
+                                </span>
                               </li>
                             ))}
                           </ul>
@@ -360,7 +385,7 @@ const Projects = () => {
               <h2 className="font-display text-2xl font-bold text-foreground mb-8">
                 In Progress & Exploratory
               </h2>
-              
+
               <div className="grid md:grid-cols-2 gap-6">
                 {exploratoryProjects.map((project, index) => (
                   <motion.div
@@ -390,7 +415,11 @@ const Projects = () => {
                     </div>
                     {project.github && (
                       <Button variant="ghost" size="sm" asChild>
-                        <a href={project.github} target="_blank" rel="noopener noreferrer">
+                        <a
+                          href={project.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
                           <Github className="w-4 h-4" />
                           View Code
                         </a>
