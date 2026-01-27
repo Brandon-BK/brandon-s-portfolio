@@ -25,7 +25,7 @@ export function Footer() {
               <div className="w-10 h-10 rounded-lg bg-accent flex items-center justify-center">
                 <span className="font-display font-bold text-accent-foreground text-lg">B</span>
               </div>
-              <span className="font-display font-semibold text-foreground">Brandon Bk</span>
+              <span className="font-display font-semibold text-foreground">Brandon Kisibu</span>
             </div>
             <p className="text-muted-foreground text-sm leading-relaxed">
               Cross-Platform Software Engineer → Data & AI Engineering. Always following the flow of data.
@@ -70,7 +70,7 @@ export function Footer() {
 
         <div className="mt-12 pt-8 border-t border-border flex flex-col sm:flex-row justify-between items-center gap-4">
           <p className="text-muted-foreground text-sm">
-            © {new Date().getFullYear()} Brandon Bk. All rights reserved.
+            © {new Date().getFullYear()} Brandon Kisibu. All rights reserved.
           </p>
           <p className="text-muted-foreground text-sm">
             Adaptable • System-Focused • Growth-Oriented
