@@ -17,24 +17,24 @@ const skillCategories: SkillCategory[] = [
       { name: "JavaScript", level: 90, status: "proficient" },
       { name: "Python", level: 80, status: "proficient" },
       { name: "SQL", level: 85, status: "proficient" },
-      { name: "Go", level: 35, status: "exploring" },
+      { name: "Go", level: 30, status: "exploring" },
     ],
   },
   {
     title: "Frontend & Cross-Platform",
     skills: [
       { name: "React.js", level: 90, status: "proficient" },
-      { name: "Next.js", level: 85, status: "proficient" },
+      { name: "Javascript", level: 90, status: "proficient" },
       { name: "HTML5 & CSS", level: 90, status: "proficient" },
-      { name: "Responsive Web Design", level: 85, status: "proficient" },
+      { name: "Responsive Web Design", level: 90, status: "proficient" },
     ],
   },
   {
     title: "Backend & APIs",
     skills: [
       { name: "Node.js", level: 80, status: "proficient" },
-      { name: "REST APIs", level: 85, status: "proficient" },
-      { name: "Python", level: 80, status: "proficient" },
+      { name: "REST APIs", level: 80, status: "proficient" },
+      { name: "Python", level: 75, status: "proficient" },
     ],
   },
   {
@@ -61,11 +61,11 @@ const skillCategories: SkillCategory[] = [
     title: "Data & AI",
     skills: [
       { name: "Data Modeling", level: 65, status: "learning" },
-      { name: "ETL / ELT Pipelines", level: 70, status: "learning" },
+      { name: "ETL / ELT Pipelines", level: 20, status: "learning" },
       { name: "Automated Reporting", level: 80, status: "proficient" },
       { name: "Analytics & Visualization", level: 65, status: "learning" },
       { name: "Feature Engineering", level: 50, status: "exploring" },
-      { name: "ML Fundamentals", level: 45, status: "exploring" },
+      { name: "ML Fundamentals", level: 20, status: "exploring" },
     ],
   },
   {

@@ -88,7 +88,7 @@ export function HeroSection() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-lg md:text-xl text-primary-foreground/70 mb-10 max-w-2xl mx-auto"
           >
-            Cross-Platform Software Developer • Cloud Systems • Data & AI (In
+            Intermediate Software Engineer • moving to • Data & Engineering (In
             Progress)
           </motion.p>
 
@@ -107,7 +107,7 @@ export function HeroSection() {
             </Button>
             <Button variant="heroOutline" size="lg" asChild>
               <a
-                href="/Brandon_Kisibu_CV.pdf"
+                href="/Brandon Kisibu's CV.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -132,8 +132,8 @@ export function HeroSection() {
             <div className="font-mono text-sm text-primary-foreground/80">
               <span className="text-accent">$</span> brandon.current_focus
               <br />
-              <span className="text-accent/70">→</span> ["cross_platform",
-              "cloud_systems", "data_engineering", "ai_pipelines"]
+              <span className="text-accent/70">→</span> ["Intermediate Software
+              Engineer", "moving to data_engineering", "ai_pipelines"]
               <br />
               <span className="text-accent">$</span> brandon.core_principle
               <br />
@@ -154,19 +154,13 @@ export function WhatIDoSection() {
       icon: Code,
       title: "Cross-Platform Development",
       description:
-        "Build responsive web and mobile-friendly applications with React.js and Next.js. Apply UI/UX design principles for exceptional user experiences.",
-    },
-    {
-      icon: Server,
-      title: "Backend & APIs",
-      description:
-        "Design and consume RESTful APIs. Build backend services with Node.js and Python. Integrate databases and manage business logic.",
+        "Build responsive web and mobile-friendly applications with React.js, HTML 5, CSS and Javascript. Apply UI/UX design principles for exceptional user experiences.",
     },
     {
       icon: Database,
       title: "Databases & Data Management",
       description:
-        "SQL for relational data modeling, MongoDB for document-based apps, Firebase for realtime applications, AWS databases for cloud-native storage.",
+        "MongoDB for document-based apps, Firebase for realtime applications, AWS databases for cloud-native storage.",
     },
     {
       icon: Cloud,
@@ -178,7 +172,7 @@ export function WhatIDoSection() {
       icon: Brain,
       title: "Data & AI Foundations",
       description:
-        "Build data pipelines, ETL processes for analytics, prepare datasets for AI/ML workflows, and automate business reporting.",
+        "Moving in to building data pipelines, ETL processes for analytics, prepare datasets for AI/ML workflows, and automate business reporting.",
     },
     {
       icon: Palette,

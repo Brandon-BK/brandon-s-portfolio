@@ -23,10 +23,10 @@ const roadmapPhases: Phase[] = [
     status: "completed",
     description: "Cross-platform apps, backend services, AWS fundamentals, and containerized systems.",
     items: [
-      { name: "Cross-platform web applications (React.js, Next.js)", completed: true },
+      { name: "Web applications (React.js, HTML, CSS, Javascript)", completed: true },
       { name: "Backend services (Node.js, Python)", completed: true },
       { name: "RESTful API design", completed: true },
-      { name: "AWS fundamentals (EC2, Lambda, S3, IAM)", completed: true },
+      { name: "AWS fundamentals (Lambda, S3, IAM)", completed: true },
       { name: "Containerized systems (Docker, ECS)", completed: true },
       { name: "Version control", completed: true },
     ],
@@ -39,8 +39,8 @@ const roadmapPhases: Phase[] = [
     items: [
       { name: "Data pipelines with Python & SQL", completed: true, link: "/projects#data-automation" },
       { name: "Automated reporting systems", completed: true, link: "/projects#data-automation" },
-      { name: "ETL/ELT processes", completed: true },
-      { name: "Database integrations (SQL, MongoDB, Firebase)", completed: true },
+      { name: "ETL/ELT processes", completed: false },
+      { name: "Database integrations (MongoDB, Firebase, DynamoDB, S3)", completed: true },
       { name: "Analytics & visualization", completed: false },
       { name: "Data modeling best practices", completed: false },
       { name: "Stream processing basics", completed: false },
