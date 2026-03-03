@@ -14,26 +14,26 @@ const skillCategories: SkillCategory[] = [
   {
     title: "Programming Languages",
     skills: [
-      { name: "JavaScript", level: 90, status: "proficient" },
-      { name: "Python", level: 80, status: "proficient" },
-      { name: "SQL", level: 85, status: "proficient" },
-      { name: "Go", level: 30, status: "exploring" },
+      { name: "JavaScript", level: 75, status: "proficient" },
+      { name: "Python", level: 60, status: "proficient" },
+      { name: "SQL", level: 55, status: "proficient" },
+      { name: "Go", level: 20, status: "exploring" },
     ],
   },
   {
     title: "Frontend & Cross-Platform",
     skills: [
-      { name: "React.js", level: 90, status: "proficient" },
-      { name: "Javascript", level: 90, status: "proficient" },
-      { name: "HTML5 & CSS", level: 90, status: "proficient" },
+      { name: "React.js", level: 75, status: "proficient" },
+      { name: "Javascript", level: 75, status: "proficient" },
+      { name: "HTML5 & CSS", level: 80, status: "proficient" },
       { name: "Responsive Web Design", level: 90, status: "proficient" },
     ],
   },
   {
     title: "Backend & APIs",
     skills: [
-      { name: "Node.js", level: 80, status: "proficient" },
-      { name: "REST APIs", level: 80, status: "proficient" },
+      { name: "Node.js", level: 70, status: "proficient" },
+      { name: "REST APIs", level: 65, status: "proficient" },
       { name: "Python", level: 75, status: "proficient" },
     ],
   },
@@ -41,20 +41,20 @@ const skillCategories: SkillCategory[] = [
     title: "Databases & Data Stores",
     skills: [
       { name: "MongoDB", level: 75, status: "proficient" },
-      { name: "Firebase", level: 100, status: "proficient" },
+      { name: "Firebase", level: 80, status: "proficient" },
       { name: "AWS DynamoDB", level: 100, status: "proficient" },
     ],
   },
   {
     title: "Cloud & Containers (AWS)",
     skills: [
-      { name: "EC2, Lambda, S3", level: 100, status: "proficient" },
-      { name: "IAM", level: 100, status: "proficient" },
-      { name: "CloudWatch, Step Functions", level: 100, status: "proficient" },
-      { name: "ECS, Docker, Batch Jobs", level: 100, status: "proficient" },
-      { name: "Athena, SWF", level: 100, status: "proficient" },
+      { name: "EC2, Lambda, S3", level: 80, status: "proficient" },
+      { name: "IAM", level: 90, status: "proficient" },
+      { name: "CloudWatch, Step Functions", level: 80, status: "proficient" },
+      { name: "ECS, Docker, Batch Jobs", level: 76, status: "proficient" },
+      { name: "Athena, SWF", level: 80, status: "proficient" },
       { name: "Amazon Bedrock", level: 75, status: "learning" },
-      { name: "CodeCommit", level: 100, status: "proficient" },
+      { name: "CodeCommit", level: 94, status: "proficient" },
     ],
   },
   {
@@ -73,8 +73,8 @@ const skillCategories: SkillCategory[] = [
     skills: [
       { name: "Figma", level: 75, status: "proficient" },
       { name: "UI/UX Design Principles", level: 70, status: "proficient" },
-      { name: "Problem-Solving", level: 90, status: "proficient" },
-      { name: "Teamwork", level: 90, status: "proficient" },
+      { name: "Problem-Solving", level: 80, status: "proficient" },
+      { name: "Teamwork", level: 80, status: "proficient" },
     ],
   },
 ];
