@@ -88,7 +88,7 @@ export function HeroSection() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-lg md:text-xl text-primary-foreground/70 mb-10 max-w-2xl mx-auto"
           >
-            Intermediate Software Engineer • moving to • Data & Engineering (In
+            Software Engineering • moving to • Data & Engineering (In
             Progress)
           </motion.p>
 
@@ -107,7 +107,7 @@ export function HeroSection() {
             </Button>
             <Button variant="heroOutline" size="lg" asChild>
               <a
-                href="/Brandon Kisibu's CV.pdf"
+                href="/Brandon CV.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -132,7 +132,7 @@ export function HeroSection() {
             <div className="font-mono text-sm text-primary-foreground/80">
               <span className="text-accent">$</span> brandon.current_focus
               <br />
-              <span className="text-accent/70">→</span> ["Intermediate Software
+              <span className="text-accent/70">→</span> ["Software
               Engineer", "moving to data_engineering", "ai_pipelines"]
               <br />
               <span className="text-accent">$</span> brandon.core_principle
