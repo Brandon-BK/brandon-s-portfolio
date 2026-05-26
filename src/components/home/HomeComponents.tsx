@@ -107,7 +107,7 @@ export function HeroSection() {
             </Button>
             <Button variant="heroOutline" size="lg" asChild>
               <a
-                href="/Brandon CV.pdf"
+                href="/Brandon Kisibu CV.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
               >
