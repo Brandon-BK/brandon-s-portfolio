@@ -8,6 +8,7 @@ import {
   Download,
   GraduationCap,
   Award,
+  Users,
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Layout } from "@/components/layout/Layout";
@@ -110,6 +111,17 @@ const About = () => {
     "Responsive Web Design",
     "CSS",
     "Node.js",
+  ];
+
+  const softSkills = [
+    "Leadership",
+    "Mentorship",
+    "Analytical Thinking",
+    "Problem Solving",
+    "Strong Communication",
+    "Team Collaboration",
+    "Strategic Thinking",
+    "Adaptability",
   ];
 
   const careerPath = [
@@ -302,6 +314,28 @@ const About = () => {
                 {certifications.map((certification) => (
                   <span key={certification} className="tech-badge">
                     {certification}
+                  </span>
+                ))}
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="card-elevated p-8 rounded-2xl border border-border md:col-span-2"
+            >
+              <div className="w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center mb-6">
+                <Users className="w-7 h-7 text-accent" />
+              </div>
+              <h2 className="font-display text-2xl font-semibold text-foreground mb-6">
+                Soft Skills
+              </h2>
+              <div className="flex flex-wrap gap-2">
+                {softSkills.map((skill) => (
+                  <span key={skill} className="tech-badge">
+                    {skill}
                   </span>
                 ))}
               </div>
