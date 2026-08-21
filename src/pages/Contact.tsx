@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Mail, Linkedin, Github, MapPin, Send } from "lucide-react";
+import { Mail, Linkedin, Github, MapPin, Send, Phone, Download } from "lucide-react";
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -7,6 +7,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { useState } from "react";
 import { toast } from "@/hooks/use-toast";
 import emailjs from "@emailjs/browser";
+import { CV_PATH, CV_FILENAME } from "@/lib/cv";
 
 
 const Contact = () => {
@@ -69,6 +70,12 @@ const handleSubmit = async (e: React.FormEvent) => {
       label: "Email",
       value: "kisibubrandon5@gmail.com",
       href: "mailto:kisibubrandon5@gmail.com",
+    },
+    {
+      icon: Phone,
+      label: "Phone",
+      value: "+27 78 159 9383",
+      href: "tel:+27781599383",
     },
   ];
 
@@ -169,7 +176,11 @@ const handleSubmit = async (e: React.FormEvent) => {
                     <a
                       key={link.label}
                       href={link.href}
-                      target={link.href.startsWith("mailto") ? undefined : "_blank"}
+                      target={
+                        link.href.startsWith("mailto") || link.href.startsWith("tel")
+                          ? undefined
+                          : "_blank"
+                      }
                       rel="noopener noreferrer"
                       className="flex items-center gap-4 group"
                     >
@@ -206,7 +217,7 @@ const handleSubmit = async (e: React.FormEvent) => {
               <div className="p-8 rounded-2xl bg-accent/10 border border-accent/20">
                 <div className="space-y-3">
                   <p className="text-sm text-muted-foreground">
-                    <span className="font-medium text-foreground">Currently:</span> Cross-Platform Software Engineer
+                    <span className="font-medium text-foreground">Currently:</span> Software Developer at Rapidtrade
                   </p>
                   <p className="text-sm text-muted-foreground">
                     <span className="font-medium text-foreground">Growing into:</span> Data & AI Engineering
@@ -215,6 +226,17 @@ const handleSubmit = async (e: React.FormEvent) => {
                     <span className="font-medium text-foreground">Core Principle:</span> Always follow the flow of data
                   </p>
                 </div>
+                <Button variant="hero" size="lg" className="w-full mt-6" asChild>
+                  <a
+                    href={CV_PATH}
+                    download={CV_FILENAME}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Download className="w-5 h-5" />
+                    Download CV
+                  </a>
+                </Button>
               </div>
             </motion.div>
           </div>

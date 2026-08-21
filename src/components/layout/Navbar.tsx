@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { CV_PATH, CV_FILENAME } from "@/lib/cv";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -51,7 +52,18 @@ export function Navbar() {
           </div>
 
           {/* CTA Button */}
-          <div className="hidden md:block">
+          <div className="hidden md:flex items-center gap-2">
+            <Button variant="outline" size="sm" asChild>
+              <a
+                href={CV_PATH}
+                download={CV_FILENAME}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Download className="w-4 h-4" />
+                CV
+              </a>
+            </Button>
             <Button variant="hero" size="sm" asChild>
               <Link to="/contact">Let's Talk</Link>
             </Button>
@@ -93,7 +105,19 @@ export function Navbar() {
                     {link.label}
                   </Link>
                 ))}
-                <div className="pt-2">
+                <div className="pt-2 space-y-2">
+                  <Button variant="outline" size="lg" className="w-full" asChild>
+                    <a
+                      href={CV_PATH}
+                      download={CV_FILENAME}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      <Download className="w-5 h-5" />
+                      Download CV
+                    </a>
+                  </Button>
                   <Button variant="hero" size="lg" className="w-full" asChild>
                     <Link to="/contact" onClick={() => setIsOpen(false)}>
                       Let's Talk
