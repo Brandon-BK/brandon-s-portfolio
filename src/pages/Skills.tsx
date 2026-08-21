@@ -14,18 +14,20 @@ const skillCategories: SkillCategory[] = [
   {
     title: "Programming Languages",
     skills: [
-      { name: "JavaScript", level: 75, status: "proficient" },
-      { name: "Python", level: 60, status: "proficient" },
-      { name: "SQL", level: 55, status: "proficient" },
+      { name: "JavaScript", level: 80, status: "proficient" },
+      { name: "TypeScript", level: 70, status: "proficient" },
+      { name: "Python", level: 75, status: "proficient" },
+      { name: "SQL", level: 75, status: "proficient" },
       { name: "Go", level: 20, status: "exploring" },
     ],
   },
   {
-    title: "Frontend & Cross-Platform",
+    title: "Frontend",
     skills: [
       { name: "React.js", level: 75, status: "proficient" },
-      { name: "Javascript", level: 75, status: "proficient" },
       { name: "HTML5 & CSS", level: 80, status: "proficient" },
+      { name: "Tailwind CSS", level: 75, status: "proficient" },
+      { name: "Bootstrap & Material UI", level: 70, status: "proficient" },
       { name: "Responsive Web Design", level: 90, status: "proficient" },
     ],
   },
@@ -42,7 +44,8 @@ const skillCategories: SkillCategory[] = [
     skills: [
       { name: "MongoDB", level: 75, status: "proficient" },
       { name: "Firebase", level: 80, status: "proficient" },
-      { name: "AWS DynamoDB", level: 100, status: "proficient" },
+      { name: "AWS DynamoDB", level: 80, status: "proficient" },
+      { name: "SQL", level: 75, status: "proficient" },
     ],
   },
   {
@@ -54,7 +57,8 @@ const skillCategories: SkillCategory[] = [
       { name: "ECS, Docker, Batch Jobs", level: 76, status: "proficient" },
       { name: "Athena, SWF", level: 80, status: "proficient" },
       { name: "Amazon Bedrock", level: 75, status: "learning" },
-      { name: "CodeCommit", level: 94, status: "proficient" },
+      { name: "CodeCommit", level: 90, status: "proficient" },
+      { name: "Git/GitHub", level: 90, status: "proficient" },
     ],
   },
   {
@@ -77,6 +81,17 @@ const skillCategories: SkillCategory[] = [
       { name: "Teamwork", level: 80, status: "proficient" },
     ],
   },
+];
+
+const softSkills = [
+  "Leadership",
+  "Mentorship",
+  "Analytical Thinking",
+  "Problem Solving",
+  "Strong Communication",
+  "Team Collaboration",
+  "Strategic Thinking",
+  "Adaptability",
 ];
 
 const statusColors = {
@@ -170,6 +185,26 @@ const Skills = () => {
               </motion.div>
             ))}
           </div>
+
+          {/* Soft Skills */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="card-elevated p-8 rounded-2xl border border-border mt-12"
+          >
+            <h2 className="font-display text-2xl font-semibold text-foreground mb-6">
+              Soft Skills
+            </h2>
+            <div className="flex flex-wrap gap-2">
+              {softSkills.map((skill) => (
+                <span key={skill} className="tech-badge">
+                  {skill}
+                </span>
+              ))}
+            </div>
+          </motion.div>
         </div>
       </section>
     </Layout>

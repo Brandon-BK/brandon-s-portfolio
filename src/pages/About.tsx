@@ -1,31 +1,115 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Target, Lightbulb, Rocket, Code, TrendingUp } from "lucide-react";
+import {
+  ArrowRight,
+  Target,
+  Lightbulb,
+  Code,
+  TrendingUp,
+  Download,
+  GraduationCap,
+  Award,
+} from "lucide-react";
 import { Link } from "react-router-dom";
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
+import { CV_PATH, CV_FILENAME } from "@/lib/cv";
 
 const About = () => {
   const highlights = [
     {
       icon: Code,
-      title: "Software Developer Expertise",
-      description: "Moving fluidly between frontend, backend, cloud infrastructure, and data workflows depending on the team's needs.",
+      title: "Production-Ready Applications",
+      description: "Building responsive web applications with React.js, TypeScript, and modern CSS frameworks for real clients.",
     },
     {
       icon: Target,
-      title: "Data Flow Focus",
-      description: "Always following the flow of data — designing systems that are reliable, automated, and AI-ready.",
+      title: "Automation & Reporting",
+      description: "Automating daily, weekly, and monthly reporting workflows with Python and SQL to remove manual effort.",
     },
     {
       icon: Lightbulb,
-      title: "Clean Code Practices",
-      description: "Recognized for clean code practices, team collaboration, and a growth-oriented mindset.",
+      title: "Cloud Infrastructure",
+      description: "Designing containerized batch jobs and event-driven workflows on AWS ECS, Lambda, Athena, S3, and Step Functions.",
     },
     {
       icon: TrendingUp,
-      title: "Continuous Growth",
-      description: "Deliberately expanding into data engineering and AI-ready pipelines to build intelligent systems.",
+      title: "Mentorship & Teaching",
+      description: "Leading interns and teaching IT fundamentals, HTML, CSS, JavaScript, and React.js to new developers.",
     },
+  ];
+
+  const experience = [
+    {
+      role: "Software Developer",
+      company: "Rapidtrade",
+      period: "2024 – Present",
+      points: [
+        "Build responsive, production-ready web applications using React.js",
+        "Design and execute containerized batch jobs using Docker, AWS ECS, Python, and SQL",
+        "Develop Python and SQL reporting systems for daily, weekly, and monthly sales reporting for clients including Sasko and The Beverage Company",
+        "Automate infrastructure and batch processes to improve operational efficiency and reduce costs",
+        "Build and maintain cloud-integrated workflows using AWS ECS, Lambda, Athena, S3, Step Functions, and CloudWatch",
+      ],
+    },
+    {
+      role: "Software Developer",
+      company: "Active Media Industries",
+      period: "2022 – 2023",
+      points: [
+        "Developed and maintained web applications using JavaScript, HTML, CSS, and React.js",
+        "Built responsive landing pages and reusable UI components",
+        "Worked in Agile cross-functional teams",
+        "Contributed to the Active Foundation and Active Media platforms using React.js",
+        "Led and mentored interns through hands-on development projects and live client work",
+      ],
+    },
+    {
+      role: "IT Course Instructor",
+      company: "Active Media Industries – December IT Program",
+      period: "December 2022 & December 2023",
+      points: [
+        "Taught IT fundamentals and practical web development concepts",
+        "Delivered lessons on HTML, CSS, JavaScript, and React.js",
+        "Guided students through hands-on projects and real-world applications",
+        "Mentored learners on development best practices and problem-solving approaches",
+      ],
+    },
+    {
+      role: "Junior Developer (Intern)",
+      company: "Active Media Industries",
+      period: "Internship",
+      points: [
+        "Assisted in frontend and web development",
+        "Supported debugging, testing, and database integration",
+        "Contributed to feature implementation and system maintenance",
+        "Gained hands-on experience across the software development lifecycle (SDLC)",
+      ],
+    },
+  ];
+
+  const education = [
+    {
+      qualification: "CS50 Computer Science",
+      institution: "Harvard University",
+      period: "Certificate",
+    },
+    {
+      qualification: "National Senior Certificate",
+      institution: "The Hill High School",
+      period: "2015 – 2019",
+    },
+  ];
+
+  const certifications = [
+    "AWS Certified Cloud Practitioner",
+    "Harvard University CS50 Computer Science Certificate",
+    "JavaScript",
+    "React.js",
+    "Python",
+    "Golang",
+    "Responsive Web Design",
+    "CSS",
+    "Node.js",
   ];
 
   const careerPath = [
@@ -49,14 +133,25 @@ const About = () => {
               About Me
             </h1>
             <p className="text-xl text-muted-foreground leading-relaxed mb-8">
-              I'm a results-driven software developer who builds fast, scalable, and user-focused web applications while working across frontend, backend, cloud, and databases.
+              I'm a Software Developer with experience building responsive web applications, automation systems, and cloud-based solutions using React.js, Python, SQL, and AWS.
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-              I specialize in React.js, JavaScript, HTML5, and CSS, and I'm proficient in Python and SQL. I always follow the flow of data, designing systems that are reliable, automated, and AI-ready.
+              I've developed production-ready applications, automated reporting workflows, and worked with scalable cloud infrastructure. I have a strong interest in data engineering, AI-ready systems, and automation.
             </p>
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              This portfolio reflects how I work: <span className="text-foreground font-medium">adaptable, system-focused, growth-oriented, and always learning.</span>
+            <p className="text-lg text-muted-foreground leading-relaxed mb-8">
+              I'm passionate about continuous learning and building systems that <span className="text-foreground font-medium">improve efficiency and solve real-world problems.</span>
             </p>
+            <Button variant="hero" size="lg" asChild>
+              <a
+                href={CV_PATH}
+                download={CV_FILENAME}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Download className="w-5 h-5" />
+                Download My CV
+              </a>
+            </Button>
           </motion.div>
         </div>
       </section>
@@ -75,7 +170,7 @@ const About = () => {
               How I Work
             </h2>
             <p className="text-muted-foreground text-lg leading-relaxed">
-              I work primarily as a Software Developer, moving fluidly between frontend, backend, cloud infrastructure, and data workflows depending on the team's needs. Some days I design UI/UX and wireframes, other days I build backend services, automate data pipelines, or manage cloud systems.
+              I move fluidly between frontend, backend, cloud infrastructure, and data workflows depending on the team's needs. Some days I build React interfaces, other days I write Python and SQL reporting jobs, containerize them with Docker, and run them on AWS.
             </p>
           </motion.div>
 
@@ -104,7 +199,7 @@ const About = () => {
         </div>
       </section>
 
-      {/* Experience Summary */}
+      {/* Experience */}
       <section className="section-padding bg-background">
         <div className="container-narrow">
           <motion.div
@@ -115,17 +210,108 @@ const About = () => {
             className="max-w-3xl mb-12"
           >
             <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Experience & Background
+              Experience
             </h2>
             <p className="text-muted-foreground text-lg leading-relaxed">
-              I have experience in frontend technologies, Python, SQL, AWS cloud platforms, and containerized systems, and I'm currently expanding into data engineering and AI-ready pipelines. My goal is to build platforms that turn raw data into intelligent, production-ready systems.
+              Professional roles across software development, cloud automation, and technical instruction.
             </p>
           </motion.div>
+
+          <div className="space-y-8">
+            {experience.map((job, index) => (
+              <motion.div
+                key={`${job.role}-${job.company}-${job.period}`}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="card-elevated p-8 rounded-2xl border border-border"
+              >
+                <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2 mb-6">
+                  <div>
+                    <h3 className="font-display text-xl font-semibold text-foreground">
+                      {job.role}
+                    </h3>
+                    <p className="text-accent font-medium">{job.company}</p>
+                  </div>
+                  <span className="text-sm text-muted-foreground uppercase tracking-wider">
+                    {job.period}
+                  </span>
+                </div>
+                <ul className="space-y-3">
+                  {job.points.map((point) => (
+                    <li key={point} className="flex items-start gap-3">
+                      <ArrowRight className="w-4 h-4 text-accent mt-1 flex-shrink-0" />
+                      <span className="text-muted-foreground leading-relaxed">
+                        {point}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Education & Certifications */}
+      <section className="section-padding bg-muted">
+        <div className="container-narrow">
+          <div className="grid md:grid-cols-2 gap-8">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="card-elevated p-8 rounded-2xl border border-border"
+            >
+              <div className="w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center mb-6">
+                <GraduationCap className="w-7 h-7 text-accent" />
+              </div>
+              <h2 className="font-display text-2xl font-semibold text-foreground mb-6">
+                Education
+              </h2>
+              <div className="space-y-6">
+                {education.map((item) => (
+                  <div key={item.qualification}>
+                    <h3 className="text-foreground font-medium">
+                      {item.qualification}
+                    </h3>
+                    <p className="text-muted-foreground text-sm">
+                      {item.institution} • {item.period}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="card-elevated p-8 rounded-2xl border border-border"
+            >
+              <div className="w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center mb-6">
+                <Award className="w-7 h-7 text-accent" />
+              </div>
+              <h2 className="font-display text-2xl font-semibold text-foreground mb-6">
+                Certifications
+              </h2>
+              <div className="flex flex-wrap gap-2">
+                {certifications.map((certification) => (
+                  <span key={certification} className="tech-badge">
+                    {certification}
+                  </span>
+                ))}
+              </div>
+            </motion.div>
+          </div>
         </div>
       </section>
 
       {/* Career Direction */}
-      <section className="section-padding bg-muted">
+      <section className="section-padding bg-background">
         <div className="container-narrow">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

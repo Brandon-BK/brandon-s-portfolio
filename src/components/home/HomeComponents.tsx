@@ -11,6 +11,7 @@ import {
   Palette,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { CV_PATH, CV_FILENAME } from "@/lib/cv";
 
 export function HeroSection() {
   return (
@@ -88,8 +89,8 @@ export function HeroSection() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-lg md:text-xl text-primary-foreground/70 mb-10 max-w-2xl mx-auto"
           >
-            Software Engineering • moving to • Data & Engineering (In
-            Progress)
+            Software Developer • React.js, Python, SQL & AWS • moving into Data
+            & AI Engineering
           </motion.p>
 
           {/* CTAs */}
@@ -107,12 +108,13 @@ export function HeroSection() {
             </Button>
             <Button variant="heroOutline" size="lg" asChild>
               <a
-                href="/Brandon Kisibu CV.pdf"
+                href={CV_PATH}
+                download={CV_FILENAME}
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <Download className="w-5 h-5" />
-                View CV
+                Download CV
               </a>
             </Button>
           </motion.div>
@@ -132,8 +134,8 @@ export function HeroSection() {
             <div className="font-mono text-sm text-primary-foreground/80">
               <span className="text-accent">$</span> brandon.current_focus
               <br />
-              <span className="text-accent/70">→</span> ["Software
-              Engineer", "moving to data_engineering", "ai_pipelines"]
+              <span className="text-accent/70">→</span> ["software_development",
+              "cloud_automation", "data_engineering"]
               <br />
               <span className="text-accent">$</span> brandon.core_principle
               <br />

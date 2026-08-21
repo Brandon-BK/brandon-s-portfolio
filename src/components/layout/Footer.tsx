@@ -1,10 +1,16 @@
 import { Link } from "react-router-dom";
-import { Github, Linkedin, Mail } from "lucide-react";
+import { Github, Linkedin, Mail, Phone } from "lucide-react";
+import { CV_PATH, CV_FILENAME } from "@/lib/cv";
 
 const socialLinks = [
-  { href: "https://github.com/brandonbk", icon: Github, label: "GitHub" },
-  { href: "https://linkedin.com/in/brandonbk", icon: Linkedin, label: "LinkedIn" },
-  { href: "mailto:brandon@example.com", icon: Mail, label: "Email" },
+  { href: "https://github.com/Brandon-BK", icon: Github, label: "GitHub" },
+  {
+    href: "https://www.linkedin.com/in/brandon-kisibu-b96a6b226",
+    icon: Linkedin,
+    label: "LinkedIn",
+  },
+  { href: "mailto:kisibubrandon5@gmail.com", icon: Mail, label: "Email" },
+  { href: "tel:+27781599383", icon: Phone, label: "Phone" },
 ];
 
 const footerLinks = [
@@ -28,7 +34,7 @@ export function Footer() {
               <span className="font-display font-semibold text-foreground">Brandon Kisibu</span>
             </div>
             <p className="text-muted-foreground text-sm leading-relaxed">
-              Cross-Platform Software Engineer → Data & AI Engineering. Always following the flow of data.
+              Software Developer building responsive web applications, automation systems, and cloud-based solutions. Always following the flow of data.
             </p>
           </div>
 
@@ -45,6 +51,15 @@ export function Footer() {
                   {link.label}
                 </Link>
               ))}
+              <a
+                href={CV_PATH}
+                download={CV_FILENAME}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-muted-foreground hover:text-accent transition-colors text-sm"
+              >
+                Download CV
+              </a>
             </nav>
           </div>
 

@@ -20,10 +20,12 @@ interface Project {
 const myProjects: Project[] = [
   {
     id: "sjp-application",
-    title: "SJP CReative Studios",
-    category: "",
-    problem: "",
-    solution: "",
+    title: "SJP Creative Studios",
+    category: "Web Development",
+    problem:
+      "The SirJoshPlz brand needed a professional online presence to showcase its creative media work.",
+    solution:
+      "Built a modern, responsive portfolio website with intuitive navigation and dynamic content management for an engaging user experience.",
     tags: ["React.js", "Firebase", "Responsive Design"],
     learnings: [
       "Advanced React patterns",
@@ -43,7 +45,7 @@ const workProjects: Project[] = [
     problem:
       "Manual reporting processes consumed significant time and were prone to errors, delaying critical business insights.",
     solution:
-      "Developed batch jobs using ECS containers and Docker images. Created Python scripts and SQL code to generate daily, weekly, and monthly sales reports for companies like Sakso and The Beverage Company. Extracted logs, processed data for specific date ranges, and automated uploads/downloads.",
+      "Developed batch jobs using ECS containers and Docker images. Created Python scripts and SQL code to generate daily, weekly, and monthly sales reports for clients including Sasko and The Beverage Company. Extracted logs, processed data for specific date ranges, and automated uploads/downloads.",
     tags: [
       "Python",
       "SQL",
@@ -182,6 +184,10 @@ const Projects = () => {
                       <h3 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-4 mt-2">
                         {project.title}
                       </h3>
+
+                      <p className="text-muted-foreground leading-relaxed mb-6">
+                        {project.solution}
+                      </p>
 
                       <div className="flex flex-wrap gap-2 mb-6">
                         {project.tags.map((tag) => (
